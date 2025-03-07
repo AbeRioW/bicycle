@@ -1,0 +1,139 @@
+C51 COMPILER V9.01   DS3231                                                                03/07/2025 21:58:53 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE DS3231
+OBJECT MODULE PLACED IN .\output\ds3231.obj
+COMPILER INVOKED BY: D:\ProgramFiles\KEIL4\C51\BIN\C51.EXE bsp\ds3231.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PR
+                    -INT(.\listing\ds3231.lst) OBJECT(.\output\ds3231.obj)
+
+line level    source
+
+   1          #include "ds3231.h"
+   2          
+   3          static void I2C_Delay() {
+   4   1          unsigned int i;
+   5   1          for (i = 0; i < 10; i++);
+   6   1      }
+   7          
+   8          static void I2C_Start() {
+   9   1          SDA = 1;
+  10   1          SCL = 1;
+  11   1          I2C_Delay();
+  12   1          SDA = 0;
+  13   1          I2C_Delay();
+  14   1          SCL = 0;
+  15   1      }
+  16          
+  17          static void I2C_Stop() {
+  18   1          SDA = 0;
+  19   1          SCL = 1;
+  20   1          I2C_Delay();
+  21   1          SDA = 1;
+  22   1          I2C_Delay();
+  23   1      }
+  24          
+  25          static void I2C_Ack() {
+  26   1          SDA = 0;
+  27   1          SCL = 1;
+  28   1          I2C_Delay();
+  29   1          SCL = 0;
+  30   1          SDA = 1;
+  31   1      }
+  32          
+  33          static void I2C_NoAck() {
+  34   1          SDA = 1;
+  35   1          SCL = 1;
+  36   1          I2C_Delay();
+  37   1          SCL = 0;
+  38   1      }
+  39          
+  40          static bit I2C_WaitAck() {
+  41   1          SDA = 1;
+  42   1          SCL = 1;
+  43   1          I2C_Delay();
+  44   1          if (SDA) {
+  45   2              SCL = 0;
+  46   2              return 0;
+  47   2          }
+  48   1          SCL = 0;
+  49   1          return 1;
+  50   1      }
+  51          
+  52          static void I2C_SendByte(uchar dat) {
+  53   1          unsigned char i;
+  54   1          for (i = 0; i < 8; i++) {
+C51 COMPILER V9.01   DS3231                                                                03/07/2025 21:58:53 PAGE 2   
+
+  55   2              SDA = (dat & 0x80) ? 1 : 0;
+  56   2              dat <<= 1;
+  57   2              SCL = 1;
+  58   2              I2C_Delay();
+  59   2              SCL = 0;
+  60   2          }
+  61   1          I2C_WaitAck();
+  62   1      }
+  63          
+  64          static unsigned char I2C_ReadByte() {
+  65   1          unsigned char i, dat = 0;
+  66   1          SDA = 1;
+  67   1          for (i = 0; i < 8; i++) {
+  68   2              SCL = 1;
+  69   2              I2C_Delay();
+  70   2              dat <<= 1;
+  71   2              if (SDA) dat |= 0x01;
+  72   2              SCL = 0;
+  73   2              I2C_Delay();
+  74   2          }
+  75   1          return dat;
+  76   1      }
+  77          
+  78          void DS3231_Write(unsigned char addr, unsigned char dat) {
+  79   1          I2C_Start();
+  80   1          I2C_SendByte(0xD0);  // DS3231 的写地址
+  81   1          I2C_SendByte(addr);  // 寄存器地址
+  82   1          I2C_SendByte(dat);   // 数据
+  83   1          I2C_Stop();
+  84   1      }
+  85          
+  86          unsigned char DS3231_Read(unsigned char addr) {
+  87   1          unsigned char dat;
+  88   1          I2C_Start();
+  89   1          I2C_SendByte(0xD0);  // DS3231 的写地址
+  90   1          I2C_SendByte(addr);  // 寄存器地址
+  91   1          I2C_Start();
+  92   1          I2C_SendByte(0xD1);  // DS3231 的读地址
+  93   1          dat = I2C_ReadByte();
+  94   1          I2C_NoAck();
+  95   1          I2C_Stop();
+  96   1          return dat;
+  97   1      }
+  98          
+  99          //void main() {
+ 100          //    unsigned char second, minute, hour;
+ 101          //    DS3231_Write(0x00, 0x00);  // 设置秒
+ 102          //    DS3231_Write(0x01, 0x30);  // 设置分钟
+ 103          //    DS3231_Write(0x02, 0x12);  // 设置小时
+ 104          //
+ 105          //    while (1) {
+ 106          //        second = DS3231_Read(0x00);
+ 107          //        minute = DS3231_Read(0x01);
+ 108          //        hour = DS3231_Read(0x02);
+ 109          //        // 在这里处理读取的时间数据
+ 110          //    }
+ 111          //}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    200    ----
+   CONSTANT SIZE    =   ----    ----
+C51 COMPILER V9.01   DS3231                                                                03/07/2025 21:58:53 PAGE 3   
+
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
