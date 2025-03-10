@@ -371,6 +371,11 @@
               <FileType>1</FileType>
               <FilePath>.\bsp\uart.c</FilePath>
             </File>
+            <File>
+              <FileName>adc0832.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\bsp\adc0832.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

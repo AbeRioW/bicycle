@@ -6,5 +6,6 @@
 #include "ds3231.h"
 #include "uart.h"
 #include "stdio.h"
+#include "adc0832.h"
 
 #endif

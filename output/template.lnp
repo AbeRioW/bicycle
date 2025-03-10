@@ -1,6 +1,0 @@
-".\output\main.obj",
-".\output\lcd.obj",
-".\output\ds3231.obj",
-".\output\uart.obj" 
-TO ".\output\template" 
-PRINT(".\listing\template.m51") RAMSIZE(256) 
