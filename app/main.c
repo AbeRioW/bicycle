@@ -28,10 +28,14 @@ void main(void)
 
 	while(1)
 	{   
+	      RH();
+		  show_dht(U8RH_data_H,U8RH_data_L,U8T_data_H,U8T_data_H);
 	      if(time_come)
 		  {
 		  	time_come=0;
 			show_time();
+
+
 		  }
 	}				
 }

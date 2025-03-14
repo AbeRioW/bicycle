@@ -8,5 +8,7 @@
 #include "stdio.h"
 #include "adc0832.h"
 #include "ui.h"
+#include "config.h"
+#include "DHT11.h"
 
 #endif

@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   UI                                                                    03/14/2025 23:18:25 PAGE 1   
+C51 COMPILER V9.01   UI                                                                    03/15/2025 01:19:24 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE UI
@@ -52,18 +52,38 @@ line level    source
   42   1                      LcdWrite(0x80+14,second%10+0x30);
   43   1      }
 *** WARNING C280 IN LINE 7 OF BSP\UI.C: 'week': unreferenced local variable
+  44          
+  45          
+  46          void show_dht(unsigned char RH,unsigned char RL,unsigned char TH,unsigned char TL)
+  47          {
+  48   1                      LcdWrite(0x80+0x40,RH/10+0x30);
+  49   1                      LcdWrite(0x80+0x40+1,RH%10+0x30);
+  50   1                      LcdWrite(0x80+0x40+2,'.');
+  51   1                      LcdWrite(0x80+0x40+3,RL/10+0x30);
+  52   1                      LcdWrite(0x80+0x40+4,RL%10+0x30);
+  53   1                      LcdWrite(0x80+0x40+5,'%');
+C51 COMPILER V9.01   UI                                                                    03/15/2025 01:19:24 PAGE 2   
+
+  54   1                      LcdWrite(0x80+0x40+6,'R');
+  55   1                      LcdWrite(0x80+0x40+7,'H');
+  56   1      
+  57   1                      LcdWrite(0x80+0x40+9,TH/10+0x30);
+  58   1                      LcdWrite(0x80+0x40+10,TH%10+0x30);
+  59   1                      LcdWrite(0x80+0x40+11,'.');
+  60   1                      LcdWrite(0x80+0x40+12,TL/10+0x30);
+  61   1                      LcdWrite(0x80+0x40+13,TL%10+0x30);
+  62   1                      LcdWrite(0x80+0x40+14,'C');
+  63   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    314    ----
+   CODE SIZE        =    482    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----       7
+   DATA SIZE        =   ----      11
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
-C51 COMPILER V9.01   UI                                                                    03/14/2025 23:18:25 PAGE 2   
-
 END OF MODULE INFORMATION.
 
 
