@@ -3,46 +3,7 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\dell\Desktop\git_do\bicycle\template.uvproj
+C:\Users\dell\Desktop\giit\bicycle\template.uvproj
 Project File Date:  03/14/2025
 
 <h2>Output:</h2>
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(12): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(12): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(12): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(13): warning C280: 'i': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DS3231_WRITE?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DS3231_READ?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-Program Size: data=42.1 xdata=0 code=2049
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 10 Warning(s).
-g C280: 'second': unreferenced local variable
-APP\MAIN.C(12): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(12): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(13): warning C280: 'i': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DS3231_WRITE?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DS3231_READ?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-Program Size: data=45.1 xdata=0 code=2038
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 9 Warning(s).

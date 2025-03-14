@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   MAIN                                                                  03/14/2025 20:23:47 PAGE 1   
+C51 COMPILER V9.01   MAIN                                                                  03/14/2025 21:44:39 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
@@ -21,11 +21,11 @@ line level    source
   11          {
   12   1          unsigned char second, minute, hour;
   13   1              unsigned char i;
-  14   1              InitLcd1602();
+  14   1      //      InitLcd1602();
   15   1          UART_Init();
-  16   1              ADC_init();
-*** WARNING C206 IN LINE 16 OF APP\MAIN.C: 'ADC_init': missing function-prototype
-  17   1          
+  16   1      //      ADC_init();
+  17   1          timer0_init();
+*** WARNING C206 IN LINE 17 OF APP\MAIN.C: 'timer0_init': missing function-prototype
   18   1      //    DS3231_Write(0x00, 0x00);  // 设置秒
   19   1      //    DS3231_Write(0x01, 0x30);  // 设置分钟
   20   1      //    DS3231_Write(0x02, 0x12);  // 设置小时
@@ -43,7 +43,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     34    ----
+   CODE SIZE        =     31    ----
    CONSTANT SIZE    =      5    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

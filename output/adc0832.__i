@@ -1,1 +1,0 @@
-"bsp\adc0832.c" BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRINT(.\listing\adc0832.lst) OBJECT(.\output\adc0832.obj)
