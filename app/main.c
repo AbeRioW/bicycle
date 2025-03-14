@@ -13,6 +13,8 @@ void main(void)
 	unsigned char i;
 	InitLcd1602();
     UART_Init();
+    
+	printf("hello\r\n"); 
 //    DS3231_Write(0x00, 0x00);  // 设置秒
 //    DS3231_Write(0x01, 0x30);  // 设置分钟
 //    DS3231_Write(0x02, 0x12);  // 设置小时
