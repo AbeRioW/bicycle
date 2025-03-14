@@ -97,6 +97,7 @@ unsigned char ADC_getdate(void)
         return 0;
 }
 
+//获取ADC的数据
 unsigned char ADC0832(unsigned char chn)
 {
 	unsigned char ADval=0;
