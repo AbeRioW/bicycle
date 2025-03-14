@@ -11,7 +11,7 @@ void main(void)
 {
     unsigned char second, minute, hour;
 	unsigned char i;
-//	LcdInit();
+	InitLcd1602();
     UART_Init();
 //    DS3231_Write(0x00, 0x00);  // …Ë÷√√Î
 //    DS3231_Write(0x01, 0x30);  // …Ë÷√∑÷÷”
@@ -19,7 +19,6 @@ void main(void)
 
 	while(1)
 	{   
-	   	printf("%x\r\n",ADC0832(0));
-		Lcd1602_Delay1ms(1000);
+		LCD_TEST();
 	}				
 }

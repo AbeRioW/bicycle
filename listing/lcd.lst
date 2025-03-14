@@ -1,0 +1,94 @@
+C51 COMPILER V9.01   LCD                                                                   03/14/2025 18:16:54 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LCD
+OBJECT MODULE PLACED IN .\output\lcd.obj
+COMPILER INVOKED BY: C:\Program Files\KEIL4\C51\BIN\C51.EXE bsp\lcd.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRIN
+                    -T(.\listing\lcd.lst) OBJECT(.\output\lcd.obj)
+
+line level    source
+
+   1          #include "lcd.h"
+   2          
+   3          void LcdWaitReady()
+   4          {
+   5   1          uchar sta;
+   6   1          LCD1602_DB = 0xFF;
+   7   1          LCD1602_RS = 0;
+   8   1          LCD1602_RW = 1;
+   9   1          do
+  10   1          {
+  11   2              LCD1602_E = 1;
+  12   2              sta = LCD1602_DB; 
+  13   2              LCD1602_E = 0;
+  14   2          } while (sta & 0x80);
+  15   1      }
+  16          
+  17          void LcdWriteCmd(uchar cmd)
+  18          {
+  19   1          LcdWaitReady();
+  20   1          LCD1602_RS = 0;
+  21   1          LCD1602_RW = 0;
+  22   1          LCD1602_DB = cmd;
+  23   1          LCD1602_E = 1;
+  24   1          LCD1602_E = 0;
+  25   1      }
+  26          
+  27          void LcdWriteDat(uchar dat)
+  28          {
+  29   1          LcdWaitReady();
+  30   1          LCD1602_RS = 1;
+  31   1          LCD1602_RW = 0;
+  32   1          LCD1602_DB = dat;
+  33   1          LCD1602_E = 1;
+  34   1          LCD1602_E = 0;
+  35   1      }
+  36          
+  37          void InitLcd1602()
+  38          {
+  39   1          LcdWriteCmd(0x38);   
+  40   1              LcdWriteCmd(0x0C);  
+  41   1              LcdWriteCmd(0x06); 
+  42   1          LcdWriteCmd(0x01); 
+  43   1      }
+  44          
+  45          void LCDClear(void)
+  46          {
+  47   1              LcdWriteCmd(0x01); 
+  48   1      }
+  49          
+  50          
+  51          void LcdWrite(uchar addr, uchar dat)
+  52          {
+  53   1          LcdWriteCmd(addr);
+  54   1          LcdWriteDat(dat);
+C51 COMPILER V9.01   LCD                                                                   03/14/2025 18:16:54 PAGE 2   
+
+  55   1      }
+  56          
+  57          void LCD_TEST(void)
+  58          {
+  59   1              LcdWrite(0x80+3, '3');   //0x80:first row addr,3:offset,
+  60   1              LcdWrite(0x80+0x40+3, '4');      //0x80+0x40:second row addr,3:offset,
+  61   1              delay_ms(1000);
+  62   1              LCDClear();
+  63   1              LcdWrite(0x80+3, '5');   //0x80:first row addr,3:offset,
+  64   1              LcdWrite(0x80+0x40+3, '6');      //0x80+0x40:second row addr,3:offset,
+  65   1                      delay_ms(1000);
+  66   1                      LCDClear();
+  67   1      
+  68   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    121    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

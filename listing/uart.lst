@@ -1,0 +1,38 @@
+C51 COMPILER V9.01   UART                                                                  03/14/2025 18:16:54 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE UART
+OBJECT MODULE PLACED IN .\output\uart.obj
+COMPILER INVOKED BY: C:\Program Files\KEIL4\C51\BIN\C51.EXE bsp\uart.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRI
+                    -NT(.\listing\uart.lst) OBJECT(.\output\uart.obj)
+
+line level    source
+
+   1          #include "uart.h"
+   2          sfr AUXR = 0x8E;  // ¶¨Òå AUXR ¼Ä´æÆ÷
+   3          
+   4          void UART_Init() {
+   5   1          TMOD = 0x20;
+   6   1          TH1 = 0xFD;
+   7   1          TL1 = 0xFD;
+   8   1          TR1 = 1;
+   9   1          SCON = 0x50;
+  10   1          ES = 1;
+  11   1          EA = 1;
+  12   1      
+  13   1              TI=1;
+  14   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     21    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

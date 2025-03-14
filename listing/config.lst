@@ -1,0 +1,40 @@
+C51 COMPILER V9.01   CONFIG                                                                03/14/2025 18:09:20 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE CONFIG
+OBJECT MODULE PLACED IN .\output\config.obj
+COMPILER INVOKED BY: C:\Program Files\KEIL4\C51\BIN\C51.EXE bsp\config.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND P
+                    -RINT(.\listing\config.lst) OBJECT(.\output\config.obj)
+
+line level    source
+
+   1          #include "config.h"
+   2          
+   3          void delay_us(uchar n) //延时 2*n+2 us
+   4          {
+   5   1          while (--n)
+   6   1              ;
+   7   1      }
+   8          
+   9          void delay_ms(uint z)
+  10          {
+  11   1          uint i, j;
+  12   1          for (i = z; i > 0; i--)
+  13   1              for (j = 110; j > 0; j--)
+  14   1                  ;
+  15   1      }
+  16          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     33    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

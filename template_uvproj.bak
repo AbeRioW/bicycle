@@ -376,11 +376,6 @@
               <FileType>1</FileType>
               <FilePath>.\bsp\adc0832.c</FilePath>
             </File>
-            <File>
-              <FileName>config.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\bsp\config.c</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>

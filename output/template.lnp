@@ -1,0 +1,8 @@
+".\output\main.obj",
+".\output\lcd.obj",
+".\output\ds3231.obj",
+".\output\uart.obj",
+".\output\adc0832.obj",
+".\output\config.obj" 
+TO ".\output\template" 
+PRINT(".\listing\template.m51") RAMSIZE(256) 

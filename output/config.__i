@@ -1,0 +1,1 @@
+"bsp\config.c" BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRINT(.\listing\config.lst) OBJECT(.\output\config.obj)
