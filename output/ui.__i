@@ -1,0 +1,1 @@
+"bsp\ui.c" BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRINT(.\listing\ui.lst) OBJECT(.\output\ui.obj)

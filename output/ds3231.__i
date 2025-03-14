@@ -1,0 +1,1 @@
+"bsp\ds3231.c" BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRINT(.\listing\ds3231.lst) OBJECT(.\output\ds3231.obj)

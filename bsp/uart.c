@@ -4,7 +4,7 @@
 #define FOSC 11059200L
 #define T1MS (65536-FOSC/12/1000)   //1ms timer calculation method in 12T mode
 unsigned int count;                         //1000 times counter
-
+int time_come=0;
 
 
 sbit TEST_LED = P1^0;               //work LED, flash once per second
@@ -22,6 +22,17 @@ void UART_Init() {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+//定时器相关
 void timer0_init(void)
 {
 	TMOD = 0x01;                    //set timer0 as mode1 (16-bit)
@@ -42,6 +53,7 @@ void tm0_isr() interrupt 1
     if (count-- == 0)               //1ms * 1000 -> 1s
     {
         count = 1000;               //reset counter
-        TEST_LED = ! TEST_LED;      //work LED flash
+        //TEST_LED = ! TEST_LED;      //work LED flash
+		 time_come = 1;
     }
 }

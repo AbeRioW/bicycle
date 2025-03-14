@@ -7,5 +7,6 @@
 #include "uart.h"
 #include "stdio.h"
 #include "adc0832.h"
+#include "ui.h"
 
 #endif
