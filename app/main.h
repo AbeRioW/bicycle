@@ -11,4 +11,10 @@
 #include "config.h"
 #include "DHT11.h"
 
+sbit BEEP = P1^2;
+sbit LED = P1^3;
+
+sbit BUTTON_L = P1^4;
+sbit BUTTON_M = P1^5;
+sbit BUTTON_R = P1^6;
 #endif

@@ -1,6 +1,7 @@
 #include "main.h"
 unsigned char Disp[]="Test OK";
 
+
 /*******************************************************************************
 * 函 数 名         : main
 * 函数功能		   : 主函数
@@ -28,6 +29,13 @@ void main(void)
 
 	while(1)
 	{   
+
+
+		while(1)
+		{
+		    if(BUTTON_R==0)
+			   	LED = 0;
+		}
 	      RH();
 		  show_dht(U8RH_data_H,U8RH_data_L,U8T_data_H,U8T_data_H);
 	      if(time_come)
