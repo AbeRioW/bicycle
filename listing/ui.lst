@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   UI                                                                    03/15/2025 03:08:44 PAGE 1   
+C51 COMPILER V9.01   UI                                                                    03/15/2025 04:38:25 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE UI
@@ -62,7 +62,7 @@ line level    source
   51   1                      LcdWrite(0x80+0x40+3,RL/10+0x30);
   52   1                      LcdWrite(0x80+0x40+4,RL%10+0x30);
   53   1                      LcdWrite(0x80+0x40+5,'%');
-C51 COMPILER V9.01   UI                                                                    03/15/2025 03:08:44 PAGE 2   
+C51 COMPILER V9.01   UI                                                                    03/15/2025 04:38:25 PAGE 2   
 
   54   1                      LcdWrite(0x80+0x40+6,'R');
   55   1                      LcdWrite(0x80+0x40+7,'H');
@@ -74,14 +74,101 @@ line level    source
   61   1                      LcdWrite(0x80+0x40+13,TL%10+0x30);
   62   1                      LcdWrite(0x80+0x40+14,'C');
   63   1      }
+  64          
+  65          void ui_setting(void)
+  66          {
+  67   1          int position=0;
+  68   1      //      Lcd_show_string(1,1,"Setting Menu",12);
+  69   1      //      Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+  70   1              while(1)
+  71   1              {
+  72   2                        if(BUTTON_M==0)
+  73   2                        {
+  74   3                               position++;
+  75   3                               if(position==5)
+  76   3                               {
+  77   4                                  position=0;
+  78   4                               }
+  79   3                        }
+  80   2      
+  81   2                        if(BUTTON_L==0)
+  82   2                        {
+  83   3                               position--;
+  84   3                               if(position<0)
+  85   3                               {
+  86   4                                  position=4;
+  87   4                               }
+  88   3                        }
+  89   2      
+  90   2                        if(BUTTON_R==0)
+  91   2                        {
+  92   3                              switch(position)
+  93   3                              {
+  94   4                                      case 0:
+  95   4                                          LCDClear();
+  96   4                                              return;
+  97   4                                      break;
+  98   4                                      case 1:
+  99   4                                              LCDClear();
+ 100   4                                      break;
+ 101   4                                      case 2:
+ 102   4                                              LCDClear();
+ 103   4                                      break;
+ 104   4                                      case 3:
+ 105   4                                              LCDClear();
+ 106   4                                      break;
+ 107   4                                      case 4:
+ 108   4                                              LCDClear();
+ 109   4                                      break;
+ 110   4                              }       
+ 111   3                        }
+ 112   2                        else
+ 113   2                        {
+ 114   3                              switch(position)
+ 115   3                              {
+C51 COMPILER V9.01   UI                                                                    03/15/2025 04:38:25 PAGE 3   
+
+ 116   4                                      case 0:
+ 117   4                                          LCDClear();
+ 118   4                                                      Lcd_show_string(1,1,"Setting Menu",12);
+ 119   4                                                      Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+ 120   4                                              break;
+ 121   4                                      break;
+ 122   4                                      case 1:
+ 123   4                                              LCDClear();
+ 124   4                                                      Lcd_show_string(1,1,"Setting Date",12);
+ 125   4                                                      Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+ 126   4                                      break;
+ 127   4                                      case 2:
+ 128   4                                              LCDClear();
+ 129   4                                              Lcd_show_string(1,1,"Setting %RH",11);
+ 130   4                                                      Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+ 131   4                                      break;
+ 132   4                                      case 3:
+ 133   4      
+ 134   4                                              LCDClear();
+ 135   4                                                                                              Lcd_show_string(1,1,"Setting BPM",11);
+ 136   4                                                      Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+ 137   4                                      break;
+ 138   4                                      case 4:
+ 139   4                                              LCDClear();
+ 140   4                                                              Lcd_show_string(1,1,"Setting KPH",11);
+ 141   4                                                      Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+ 142   4                                      break;
+ 143   4                              }       
+ 144   3                        }
+ 145   2      
+ 146   2      
+ 147   2              }       
+ 148   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    482    ----
-   CONSTANT SIZE    =   ----    ----
+   CODE SIZE        =    707    ----
+   CONSTANT SIZE    =     77    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----      11
+   DATA SIZE        =   ----      13
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

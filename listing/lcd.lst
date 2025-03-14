@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   LCD                                                                   03/14/2025 21:43:17 PAGE 1   
+C51 COMPILER V9.01   LCD                                                                   03/15/2025 04:07:51 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE LCD
@@ -62,30 +62,43 @@ line level    source
   52          {
   53   1          LcdWriteCmd(addr);
   54   1          LcdWriteDat(dat);
-C51 COMPILER V9.01   LCD                                                                   03/14/2025 21:43:17 PAGE 2   
+C51 COMPILER V9.01   LCD                                                                   03/15/2025 04:07:51 PAGE 2   
 
   55   1      }
   56          
-  57          void LCD_TEST(void)
+  57          void Lcd_show_string(int row,int col,uchar *data_s,int size)
   58          {
-  59   1              LcdWrite(0x80+3, '3');   //0x80:first row addr,3:offset,
-  60   1              LcdWrite(0x80+0x40+3, '4');      //0x80+0x40:second row addr,3:offset,
-  61   1              delay_ms(1000);
-  62   1              LCDClear();
-  63   1              LcdWrite(0x80+3, '5');   //0x80:first row addr,3:offset,
-  64   1              LcdWrite(0x80+0x40+3, '6');      //0x80+0x40:second row addr,3:offset,
-  65   1                      delay_ms(1000);
-  66   1                      LCDClear();
-  67   1      
+  59   1          int i;
+  60   1              uchar addr = 0x80;
+  61   1              if(row==2)
+  62   1                      addr+=0x40;
+  63   1      
+  64   1              for(i=0;i<size;i++)
+  65   1              {
+  66   2                 LcdWrite(addr+i+col,data_s[i]);
+  67   2              }
   68   1      }
+  69          
+  70          void LCD_TEST(void)
+  71          {
+  72   1              LcdWrite(0x80+3, '3');   //0x80:first row addr,3:offset,
+  73   1              LcdWrite(0x80+0x40+3, '4');      //0x80+0x40:second row addr,3:offset,
+  74   1              delay_ms(1000);
+  75   1              LCDClear();
+  76   1              LcdWrite(0x80+3, '5');   //0x80:first row addr,3:offset,
+  77   1              LcdWrite(0x80+0x40+3, '6');      //0x80+0x40:second row addr,3:offset,
+  78   1                      delay_ms(1000);
+  79   1                      LCDClear();
+  80   1      
+  81   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    121    ----
+   CODE SIZE        =    205    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----    ----
+   DATA SIZE        =   ----      12
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

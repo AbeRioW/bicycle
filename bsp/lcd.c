@@ -54,6 +54,19 @@ void LcdWrite(uchar addr, uchar dat)
     LcdWriteDat(dat);
 }
 
+void Lcd_show_string(int row,int col,uchar *data_s,int size)
+{
+    int i;
+	uchar addr = 0x80;
+	if(row==2)
+		addr+=0x40;
+
+	for(i=0;i<size;i++)
+	{
+	   LcdWrite(addr+i+col,data_s[i]);
+	}
+}
+
 void LCD_TEST(void)
 {
 	LcdWrite(0x80+3, '3');	 //0x80:first row addr,3:offset,

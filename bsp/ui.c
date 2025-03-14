@@ -61,3 +61,88 @@ void show_dht(unsigned char RH,unsigned char RL,unsigned char TH,unsigned char T
 		LcdWrite(0x80+0x40+13,TL%10+0x30);
 		LcdWrite(0x80+0x40+14,'C');
 }
+
+void ui_setting(void)
+{
+    int position=0;
+//	Lcd_show_string(1,1,"Setting Menu",12);
+//	Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+	while(1)
+	{
+		  if(BUTTON_M==0)
+		  {
+		  	 position++;
+			 if(position==5)
+			 {
+			    position=0;
+			 }
+		  }
+
+		  if(BUTTON_L==0)
+		  {
+		  	 position--;
+			 if(position<0)
+			 {
+			    position=4;
+			 }
+		  }
+
+		  if(BUTTON_R==0)
+		  {
+		  	switch(position)
+			{
+				case 0:
+				    LCDClear();
+					return;
+				break;
+				case 1:
+					LCDClear();
+				break;
+				case 2:
+					LCDClear();
+				break;
+				case 3:
+					LCDClear();
+				break;
+				case 4:
+					LCDClear();
+				break;
+			}	
+		  }
+		  else
+		  {
+		  	switch(position)
+			{
+				case 0:
+				    LCDClear();
+						Lcd_show_string(1,1,"Setting Menu",12);
+						Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+					break;
+				break;
+				case 1:
+					LCDClear();
+						Lcd_show_string(1,1,"Setting Date",12);
+						Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+				break;
+				case 2:
+					LCDClear();
+					Lcd_show_string(1,1,"Setting %RH",11);
+						Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+				break;
+				case 3:
+
+					LCDClear();
+											Lcd_show_string(1,1,"Setting BPM",11);
+						Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+				break;
+				case 4:
+					LCDClear();
+							Lcd_show_string(1,1,"Setting KPH",11);
+						Lcd_show_string(2,0,"L/M:Opt R:Sure",14);
+				break;
+			}	
+		  }
+
+
+	}	
+}

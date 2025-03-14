@@ -11,7 +11,9 @@ unsigned char Disp[]="Test OK";
 void main(void)
 {
     int i=0;
+	int fanzhuan = 0;
     unsigned char second, minute, hour;
+	unsigned char adc_data;
 	InitLcd1602();
     UART_Init();
 	ADC_init();
@@ -29,21 +31,53 @@ void main(void)
 
 	while(1)
 	{   
+			
 
+		   	if(BUTTON_R==0)
+			{
+				delay_ms(2);
+				if(BUTTON_R==0)
+				{
+			   		Lcd_show_string(1,0,"               ",16);
+					Lcd_show_string(2,0,"               ",16);
+					ui_setting();
+				}				
 
-		while(1)
-		{
-		    if(BUTTON_R==0)
-			   	LED = 0;
-		}
-	      RH();
-		  show_dht(U8RH_data_H,U8RH_data_L,U8T_data_H,U8T_data_H);
+			}
+		   RH();
+		  show_dht(U8RH_data_H,U8RH_data_L,U8T_data_H,U8T_data_H);		  
+
 	      if(time_come)
 		  {
-		  	time_come=0;
-			show_time();
+		    time_come=0;
+					   	if(BUTTON_R==0)
+			{
+				delay_ms(2);
+				if(BUTTON_R==0)
+				{
+			   		Lcd_show_string(1,0,"               ",16);
+					Lcd_show_string(2,0,"               ",16);
+					ui_setting();
+				}				
 
+			}
+		    fanzhuan = !fanzhuan;
+			if(fanzhuan)
+			{
 
+			   show_time();
+
+			}
+			else
+			{
+               LCDClear();
+			   adc_data = ADC0832();
+			   LcdWrite(0x80,adc_data/10+0x30);
+			   LcdWrite(0x80+1,adc_data%10+0x30);
+			   LcdWrite(0x80+2,'B');
+			   LcdWrite(0x80+3,'P');
+			   LcdWrite(0x80+4,'M');
+			}
 		  }
 	}				
 }

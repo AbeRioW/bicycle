@@ -19,4 +19,5 @@ void LcdWriteCmd(uchar cmd);
 void LcdWrite(uchar addr, uchar dat);				  
 void LCD_TEST(void);
 void LCDClear(void);
+void Lcd_show_string(int row,int col,uchar *data_s,int size);
 #endif
