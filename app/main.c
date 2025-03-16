@@ -27,22 +27,16 @@ void main(void)
 	DS3231_Write(0x03, 0x03);  // 设置week
 	DS3231_Write(0x04, 0x01);  // 设置日
 	DS3231_Write(0x05, 0x01);  // 设置月
-	DS3231_Write(0x06, 0x17);  // 设置年
+	DS3231_Write(0x06, 0x24);  // 设置年
 
 	while(1)
 	{   
 			
 
-		   	if(BUTTON_R==0)
+		   	if(BUTTON_M==0)
 			{
-				delay_ms(2);
-				if(BUTTON_R==0)
-				{
-			   		Lcd_show_string(1,0,"               ",16);
-					Lcd_show_string(2,0,"               ",16);
-					ui_setting();
-				}				
-
+			  		LCDClear();
+			   		ui_setting();
 			}
 		   RH();
 		  show_dht(U8RH_data_H,U8RH_data_L,U8T_data_H,U8T_data_H);		  
@@ -50,17 +44,6 @@ void main(void)
 	      if(time_come)
 		  {
 		    time_come=0;
-					   	if(BUTTON_R==0)
-			{
-				delay_ms(2);
-				if(BUTTON_R==0)
-				{
-			   		Lcd_show_string(1,0,"               ",16);
-					Lcd_show_string(2,0,"               ",16);
-					ui_setting();
-				}				
-
-			}
 		    fanzhuan = !fanzhuan;
 			if(fanzhuan)
 			{

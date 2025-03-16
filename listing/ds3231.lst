@@ -1,10 +1,10 @@
-C51 COMPILER V9.01   DS3231                                                                03/15/2025 04:08:42 PAGE 1   
+C51 COMPILER V9.01   DS3231                                                                03/16/2025 13:11:37 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE DS3231
 OBJECT MODULE PLACED IN .\output\ds3231.obj
-COMPILER INVOKED BY: C:\Program Files\KEIL4\C51\BIN\C51.EXE bsp\ds3231.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND P
-                    -RINT(.\listing\ds3231.lst) OBJECT(.\output\ds3231.obj)
+COMPILER INVOKED BY: D:\ProgramFiles\KEIL4\C51\BIN\C51.EXE bsp\ds3231.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PR
+                    -INT(.\listing\ds3231.lst) OBJECT(.\output\ds3231.obj)
 
 line level    source
 
@@ -62,7 +62,7 @@ line level    source
   52          static void I2C_SendByte(uchar dat) {
   53   1          unsigned char i;
   54   1          for (i = 0; i < 8; i++) {
-C51 COMPILER V9.01   DS3231                                                                03/15/2025 04:08:42 PAGE 2   
+C51 COMPILER V9.01   DS3231                                                                03/16/2025 13:11:37 PAGE 2   
 
   55   2              SDA = (dat & 0x80) ? 1 : 0;
   56   2              dat <<= 1;
@@ -126,7 +126,7 @@ line level    source
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =    200    ----
    CONSTANT SIZE    =   ----    ----
-C51 COMPILER V9.01   DS3231                                                                03/15/2025 04:08:42 PAGE 3   
+C51 COMPILER V9.01   DS3231                                                                03/16/2025 13:11:37 PAGE 3   
 
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
