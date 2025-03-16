@@ -386,6 +386,11 @@
               <FileType>1</FileType>
               <FilePath>.\bsp\ui.c</FilePath>
             </File>
+            <File>
+              <FileName>DHT11.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\bsp\DHT11.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

@@ -1,6 +1,7 @@
 #include "main.h"
 unsigned char Disp[]="Test OK";
-
+double dht_ban = 70;
+double tem_ban = 40;
 
 /*******************************************************************************
 * º¯ Êý Ãû         : main
@@ -31,8 +32,6 @@ void main(void)
 
 	while(1)
 	{   
-			
-
 		   	if(BUTTON_M==0)
 			{
 			  		LCDClear();
@@ -40,7 +39,14 @@ void main(void)
 			}
 		   RH();
 		  show_dht(U8RH_data_H,U8RH_data_L,U8T_data_H,U8T_data_H);		  
-
+		  if((((double)U8RH_data_H+(double)U8RH_data_L/100)>dht_ban)||(((double)U8T_data_H+(double)U8T_data_H/100)>tem_ban))
+		  {
+		  	BEEP=0;
+			LED=0;
+			delay_ms(200);
+			BEEP=1;
+			LED=1;
+		  }
 	      if(time_come)
 		  {
 		    time_come=0;
