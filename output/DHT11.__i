@@ -1,0 +1,1 @@
+"bsp\DHT11.c" BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRINT(.\listing\DHT11.lst) OBJECT(.\output\DHT11.obj)

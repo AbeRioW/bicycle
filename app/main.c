@@ -15,6 +15,7 @@ void main(void)
 	int fanzhuan = 0;
     unsigned char second, minute, hour;
 	unsigned char adc_data;
+	char show[20];
 	InitLcd1602();
     UART_Init();
 	ADC_init();
@@ -32,12 +33,13 @@ void main(void)
 
 	while(1)
 	{   
-		   	if(BUTTON_M==0)
+		   if(BUTTON_M==0)
 			{
 			  		LCDClear();
 			   		ui_setting();
 			}
 		   RH();
+
 		  show_dht(U8RH_data_H,U8RH_data_L,U8T_data_H,U8T_data_H);		  
 		  if((((double)U8RH_data_H+(double)U8RH_data_L/100)>dht_ban)||(((double)U8T_data_H+(double)U8T_data_H/100)>tem_ban))
 		  {
@@ -49,6 +51,7 @@ void main(void)
 		  }
 	      if(time_come)
 		  {
+		  	
 		    time_come=0;
 		    fanzhuan = !fanzhuan;
 			if(fanzhuan)
@@ -60,7 +63,10 @@ void main(void)
 			else
 			{
                LCDClear();
+
 			   adc_data = ADC0832();
+			   sprintf(show,"heart rate:%02x",adc_data);
+			   UartSendString(show);
 			   LcdWrite(0x80,adc_data/10+0x30);
 			   LcdWrite(0x80+1,adc_data%10+0x30);
 			   LcdWrite(0x80+2,'B');

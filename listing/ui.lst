@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   UI                                                                    03/16/2025 15:46:51 PAGE 1   
+C51 COMPILER V9.01   UI                                                                    03/22/2025 10:31:25 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE UI
@@ -62,7 +62,7 @@ line level    source
   51   1                      LcdWrite(0x80+0x40+3,RL/10+0x30);
   52   1                      LcdWrite(0x80+0x40+4,RL%10+0x30);
   53   1                      LcdWrite(0x80+0x40+5,'%');
-C51 COMPILER V9.01   UI                                                                    03/16/2025 15:46:51 PAGE 2   
+C51 COMPILER V9.01   UI                                                                    03/22/2025 10:31:25 PAGE 2   
 
   54   1                      LcdWrite(0x80+0x40+6,'R');
   55   1                      LcdWrite(0x80+0x40+7,'H');
@@ -126,7 +126,7 @@ line level    source
  113   3                          delay_ms(100);
  114   3                          if(BUTTON_M ==0)
  115   3                              {
-C51 COMPILER V9.01   UI                                                                    03/16/2025 15:46:51 PAGE 3   
+C51 COMPILER V9.01   UI                                                                    03/22/2025 10:31:25 PAGE 3   
 
  116   4                                      position++;
  117   4                                      if(position>5)
@@ -190,7 +190,7 @@ line level    source
  175   6                                                                      dat_hour=23;    
  176   6                                                              }
  177   5                                                      hour = ((dat_hour&0x70)>>4)*10+(dat_hour&0x0f);
-C51 COMPILER V9.01   UI                                                                    03/16/2025 15:46:51 PAGE 4   
+C51 COMPILER V9.01   UI                                                                    03/22/2025 10:31:25 PAGE 4   
 
  178   5                                                              LcdWrite(0x80+0x40+7,hour/10+0x30);
  179   5                                                              LcdWrite(0x80+0x40+8,hour%10+0x30);     
@@ -254,7 +254,7 @@ line level    source
  237   6                                                                      dat_date=1;     
  238   6                                                              }
  239   5                                                      date = ((dat_date&0x70)>>4)*10+(dat_date&0x0f);
-C51 COMPILER V9.01   UI                                                                    03/16/2025 15:46:51 PAGE 5   
+C51 COMPILER V9.01   UI                                                                    03/22/2025 10:31:25 PAGE 5   
 
  240   5                                                              LcdWrite(0x80+0x40+4,date/10+0x30);
  241   5                                                              LcdWrite(0x80+0x40+5,date%10+0x30);     
@@ -318,7 +318,7 @@ line level    source
  298   3                              handle_setting();
  299   3                              return;
  300   3                      }  
-C51 COMPILER V9.01   UI                                                                    03/16/2025 15:46:51 PAGE 6   
+C51 COMPILER V9.01   UI                                                                    03/22/2025 10:31:25 PAGE 6   
 
  301   2              }       
  302   1      }
