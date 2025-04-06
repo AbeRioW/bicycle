@@ -1,43 +1,38 @@
 #include "DHT11.h"
-
+#include "stdio.h"
 
 #include <reg52.h>
 
-sbit P2_0 = P2^4;  // DHT11数据引脚连接到P3.2
+sbit P2_0 = P2^4;  // DHT11数据引脚连接到P24
 
 unsigned char  U8FLAG,U8temp,U8comdata;
 unsigned char  U8T_data_H,U8T_data_L,U8RH_data_H,U8RH_data_L,U8checkdata;
 unsigned char  U8T_data_H_temp,U8T_data_L_temp,U8RH_data_H_temp,U8RH_data_L_temp,U8checkdata_temp;
 void Delay(unsigned int j)
-    {      unsigned char i;
-	    for(;j>0;j--)
+{     
+	 unsigned char i;
+	 for(;j>0;j--)
 	  { 	
 		for(i=0;i<27;i++);
 
 	  }
-    }
+}
 
-       void  Delay_10us(void)
-      {
-        unsigned char i;
-        i--;
-        i--;
-        i--;
-        i--;
-        i--;
-        i--;
-       }
+void  Delay_10us(void)
+{
+     unsigned char i;
+      i--;
+      i--;
+      i--;
+      i--;
+      i--;
+       i--;
+}
 
-
-
-
-
-
-
-        void  COM(void)
-      {
+void  COM(void)
+ {
      
-	        unsigned char i;
+	   unsigned char i;
           
        for(i=0;i<8;i++)	   
 	    {
@@ -61,9 +56,9 @@ void Delay(unsigned int j)
 	   	   U8comdata|=U8temp;        //0
 	     }//rof
 	   
-	}
+}
 
-	void RH(void)
+void RH(void)
 	{
 	  //主机拉低18ms 
        P2_0=0;
@@ -100,8 +95,10 @@ void Delay(unsigned int j)
 	 //数据校验 
 	 
 	   U8temp=(U8T_data_H_temp+U8T_data_L_temp+U8RH_data_H_temp+U8RH_data_L_temp);
+	   	  UartSendString("123");
 	   if(U8temp==U8checkdata_temp)
 	   {
+		   	   	  UartSendString("125");
 	   	  U8RH_data_H=U8RH_data_H_temp;
 	   	  U8RH_data_L=U8RH_data_L_temp;
 		  U8T_data_H=U8T_data_H_temp;

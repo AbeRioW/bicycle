@@ -1,10 +1,10 @@
-C51 COMPILER V9.01   CONFIG                                                                03/22/2025 10:24:20 PAGE 1   
+C51 COMPILER V9.01   CONFIG                                                                04/06/2025 12:12:31 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE CONFIG
 OBJECT MODULE PLACED IN .\output\config.obj
-COMPILER INVOKED BY: D:\ProgramFiles\KEIL4\C51\BIN\C51.EXE bsp\config.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PR
-                    -INT(.\listing\config.lst) OBJECT(.\output\config.obj)
+COMPILER INVOKED BY: D:\programFile\KEIL4\C51\BIN\C51.EXE bsp\config.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRI
+                    -NT(.\listing\config.lst) OBJECT(.\output\config.obj)
 
 line level    source
 

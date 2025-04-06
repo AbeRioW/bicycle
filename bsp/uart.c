@@ -6,6 +6,7 @@
 unsigned int count;                         //1000 times counter
 int time_come=0;
 
+int speed_count=0;
 
 sbit TEST_LED = P1^0;               //work LED, flash once per second
 
@@ -123,5 +124,24 @@ void tm0_isr() interrupt 1
 		 time_come = 1;
 		 
     }
+
+}
+
+
+void Int0Init()
+{
+	//设置INT0
+	IT0=1;//跳变沿出发方式（下降沿）
+	EX0=1;//打开INT0的中断允许。	
+	EA=1;//打开总中断	
+}
+
+void Int0()	interrupt 0		//外部中断0的中断函数
+{
+	//printf("12\r\n");\
+	if(P3^2==0)
+	{
+			speed_count++;
+	}
 
 }

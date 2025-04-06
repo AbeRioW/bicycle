@@ -1,10 +1,10 @@
-C51 COMPILER V9.01   UART                                                                  03/22/2025 10:57:40 PAGE 1   
+C51 COMPILER V9.01   UART                                                                  04/06/2025 16:31:12 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE UART
 OBJECT MODULE PLACED IN .\output\uart.obj
-COMPILER INVOKED BY: D:\ProgramFiles\KEIL4\C51\BIN\C51.EXE bsp\uart.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRIN
-                    -T(.\listing\uart.lst) OBJECT(.\output\uart.obj)
+COMPILER INVOKED BY: D:\programFile\KEIL4\C51\BIN\C51.EXE bsp\uart.c BROWSE INCDIR(.\app;.\bsp) DEBUG OBJECTEXTEND PRINT
+                    -(.\listing\uart.lst) OBJECT(.\output\uart.obj)
 
 line level    source
 
@@ -16,140 +16,161 @@ line level    source
    6          unsigned int count;                         //1000 times counter
    7          int time_come=0;
    8          
-   9          
-  10          sbit TEST_LED = P1^0;               //work LED, flash once per second
-  11          
+   9          int speed_count=0;
+  10          
+  11          sbit TEST_LED = P1^0;               //work LED, flash once per second
   12          
-  13          //void UART_SER (void) interrupt 4     //串行中断服务程序
-  14          //{
-  15          //    unsigned char r_buf;
-  16          //    if(RI)                        //判断是接收中断产生
-  17          //    {
-  18          //        RI=0;                      //标志位清零
-  19          //        r_buf = SBUF;
-  20          //              if(r_buf=='C'||r_buf=='D')    
-  21          //              {
-  22          //                      count=0;
-  23          //                      memset(rec_data,0,11);
-  24          //                      rec_data[0]=r_buf;
-  25          //              }
-  26          //              else
-  27          //              {
-  28          //                      count+=1;
-  29          //                      rec_data[count]=r_buf;                          
-  30          //              }
-  31          //              if(rec_data[3]=='O')
-  32          //              {
-  33          //                 is_connected=1; 
-  34          //              }
-  35          //              if(rec_data[3]=='L')
-  36          //              {
-  37          //                is_connected=0;  
-  38          //              }
-  39          //
-  40          //              if(r_buf=='\n')
-  41          //              {
-  42          //                 if(memcmp(rec_data,connect_data,8)==0)
-  43          //                 {
-  44          //                     is_connected=1;
-  45          //                 }
-  46          //
-  47          //                 if(memcmp(rec_data,close_data,8)==0)
-  48          //                 {
-  49          //                    is_connected=0;
-  50          //                 }
-  51          //              }
-  52          //    }
-  53          ////    if(TI)  //如果是发送标志位，清零
-  54          ////        TI=0;
-C51 COMPILER V9.01   UART                                                                  03/22/2025 10:57:40 PAGE 2   
+  13          
+  14          //void UART_SER (void) interrupt 4     //串行中断服务程序
+  15          //{
+  16          //    unsigned char r_buf;
+  17          //    if(RI)                        //判断是接收中断产生
+  18          //    {
+  19          //        RI=0;                      //标志位清零
+  20          //        r_buf = SBUF;
+  21          //              if(r_buf=='C'||r_buf=='D')    
+  22          //              {
+  23          //                      count=0;
+  24          //                      memset(rec_data,0,11);
+  25          //                      rec_data[0]=r_buf;
+  26          //              }
+  27          //              else
+  28          //              {
+  29          //                      count+=1;
+  30          //                      rec_data[count]=r_buf;                          
+  31          //              }
+  32          //              if(rec_data[3]=='O')
+  33          //              {
+  34          //                 is_connected=1; 
+  35          //              }
+  36          //              if(rec_data[3]=='L')
+  37          //              {
+  38          //                is_connected=0;  
+  39          //              }
+  40          //
+  41          //              if(r_buf=='\n')
+  42          //              {
+  43          //                 if(memcmp(rec_data,connect_data,8)==0)
+  44          //                 {
+  45          //                     is_connected=1;
+  46          //                 }
+  47          //
+  48          //                 if(memcmp(rec_data,close_data,8)==0)
+  49          //                 {
+  50          //                    is_connected=0;
+  51          //                 }
+  52          //              }
+  53          //    }
+  54          ////    if(TI)  //如果是发送标志位，清零
+C51 COMPILER V9.01   UART                                                                  04/06/2025 16:31:12 PAGE 2   
 
-  55          //}
-  56          
-  57          void UART_Init(void)       //11.0592MHz,波特率为9600
-  58          {
-  59   1          SCON  = 0x50;                // SCON: 模式 1, 8-bit UART, 使能接收
-  60   1          TMOD |= 0x20;               // TMOD: timer 1, mode 2, 8-bit 重装
-  61   1          TH1   = 0xFD;               // TH1:  重装值 9600 波特率 晶振 11.0592MHz
-  62   1          TL1 = TH1;
-  63   1          TR1   = 1;                  // TR1:  timer 1 打开
-  64   1          EA    = 1;                  //打开总中断
-  65   1          ES    = 0;                  //先关闭串口中断
-  66   1              TI    =1;
-  67   1      }
-  68          
+  55          ////        TI=0;
+  56          //}
+  57          
+  58          void UART_Init(void)       //11.0592MHz,波特率为9600
+  59          {
+  60   1          SCON  = 0x50;                // SCON: 模式 1, 8-bit UART, 使能接收
+  61   1          TMOD |= 0x20;               // TMOD: timer 1, mode 2, 8-bit 重装
+  62   1          TH1   = 0xFD;               // TH1:  重装值 9600 波特率 晶振 11.0592MHz
+  63   1          TL1 = TH1;
+  64   1          TR1   = 1;                  // TR1:  timer 1 打开
+  65   1          EA    = 1;                  //打开总中断
+  66   1          ES    = 0;                  //先关闭串口中断
+  67   1              TI    =1;
+  68   1      }
   69          
-  70          void uartSendByte(unsigned char dat)
-  71          {
-  72   1          unsigned char time_out;
-  73   1          time_out=0x00;
-  74   1          SBUF = dat;              //将数据放入SBUF中
-  75   1          while((!TI)&&(time_out<255))  //检测是否发送出去
-  76   1          {
-  77   2              time_out++;    //未发送出去 进行短暂延时
-  78   2          }
-  79   1          TI = 0;                        //清除ti标志
-  80   1      }
-  81          
+  70          
+  71          void uartSendByte(unsigned char dat)
+  72          {
+  73   1          unsigned char time_out;
+  74   1          time_out=0x00;
+  75   1          SBUF = dat;              //将数据放入SBUF中
+  76   1          while((!TI)&&(time_out<255))  //检测是否发送出去
+  77   1          {
+  78   2              time_out++;    //未发送出去 进行短暂延时
+  79   2          }
+  80   1          TI = 0;                        //清除ti标志
+  81   1      }
   82          
   83          
-  84          /*------------------------------------------------
-  85                              发送一个字符串
-  86          ------------------------------------------------*/
-  87          void UartSendString(unsigned char *s)
-  88          {
-  89   1          while(*s!='\0')// \0 表示字符串结束标志，
-  90   1              //通过检测是否字符串末尾
-  91   1          {
-  92   2              uartSendByte(*s);//发送一个字节
-  93   2              s++;//指向下一个数据
-  94   2          }
-  95   1      }
-  96          
+  84          
+  85          /*------------------------------------------------
+  86                              发送一个字符串
+  87          ------------------------------------------------*/
+  88          void UartSendString(unsigned char *s)
+  89          {
+  90   1          while(*s!='\0')// \0 表示字符串结束标志，
+  91   1              //通过检测是否字符串末尾
+  92   1          {
+  93   2              uartSendByte(*s);//发送一个字节
+  94   2              s++;//指向下一个数据
+  95   2          }
+  96   1      }
   97          
   98          
   99          
  100          
- 101          //定时器相关
- 102          void timer0_init(void)
- 103          {
- 104   1              TMOD |= 0x01;                    //set timer0 as mode1 (16-bit)
- 105   1          TL0 = T1MS;                     //initial timer0 low byte
- 106   1          TH0 = T1MS >> 8;                //initial timer0 high byte
- 107   1          TR0 = 1;                        //timer0 start running
- 108   1          ET0 = 1;                        //enable timer0 interrupt
- 109   1          EA = 1;                         //open global interrupt switch
- 110   1          count = 0;                      //initial counter
- 111   1      }
- 112          
+ 101          
+ 102          //定时器相关
+ 103          void timer0_init(void)
+ 104          {
+ 105   1              TMOD |= 0x01;                    //set timer0 as mode1 (16-bit)
+ 106   1          TL0 = T1MS;                     //initial timer0 low byte
+ 107   1          TH0 = T1MS >> 8;                //initial timer0 high byte
+ 108   1          TR0 = 1;                        //timer0 start running
+ 109   1          ET0 = 1;                        //enable timer0 interrupt
+ 110   1          EA = 1;                         //open global interrupt switch
+ 111   1          count = 0;                      //initial counter
+ 112   1      }
  113          
- 114          /* Timer0 interrupt routine */
- 115          void tm0_isr() interrupt 1
- 116          {
-C51 COMPILER V9.01   UART                                                                  03/22/2025 10:57:40 PAGE 3   
+ 114          
+ 115          /* Timer0 interrupt routine */
+ 116          void tm0_isr() interrupt 1
+C51 COMPILER V9.01   UART                                                                  04/06/2025 16:31:12 PAGE 3   
 
- 117   1          TL0 = T1MS;                     //reload timer0 low byte
- 118   1          TH0 = T1MS >> 8;                //reload timer0 high byte
- 119   1          if (count-- == 0)               //1ms * 1000 -> 1s
- 120   1          {
- 121   2              count = 1000;               //reset counter
- 122   2              //TEST_LED = ! TEST_LED;      //work LED flash
- 123   2                       time_come = 1;
- 124   2                       
- 125   2          }
- 126   1      
- 127   1      }
+ 117          {
+ 118   1          TL0 = T1MS;                     //reload timer0 low byte
+ 119   1          TH0 = T1MS >> 8;                //reload timer0 high byte
+ 120   1          if (count-- == 0)               //1ms * 1000 -> 1s
+ 121   1          {
+ 122   2              count = 1000;               //reset counter
+ 123   2              //TEST_LED = ! TEST_LED;      //work LED flash
+ 124   2                       time_come = 1;
+ 125   2                       
+ 126   2          }
+ 127   1      
+ 128   1      }
+ 129          
+ 130          
+ 131          void Int0Init()
+ 132          {
+ 133   1              //设置INT0
+ 134   1              IT0=1;//跳变沿出发方式（下降沿）
+ 135   1              EX0=1;//打开INT0的中断允许。    
+ 136   1              EA=1;//打开总中断       
+ 137   1      }
+ 138          
+ 139          void Int0()     interrupt 0             //外部中断0的中断函数
+ 140          {
+ 141   1              //printf("12\r\n");\
+*** WARNING C329 IN LINE 141 OF bsp\uart.c: single-line comment contains line-continuation
+ 142   1              if(P3^2==0)
+ 143   1              {
+ 144   2                              speed_count++;
+ 145   2              }
+ 146   1      
+ 147   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    126    ----
+   CODE SIZE        =    146    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      4    ----
+   DATA SIZE        =      6    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
