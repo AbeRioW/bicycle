@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   UI                                                                    04/06/2025 16:31:13 PAGE 1   
+C51 COMPILER V9.01   UI                                                                    04/08/2025 00:00:51 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE UI
@@ -9,328 +9,529 @@ COMPILER INVOKED BY: D:\programFile\KEIL4\C51\BIN\C51.EXE bsp\ui.c BROWSE INCDIR
 line level    source
 
    1          #include "ui.h"
-   2          
-   3          void show_time(void)
-   4          {
-   5   1                  unsigned char dat;
-   6   1                  unsigned char second, minute, hour;
-   7   1                      unsigned char year, month, date,week;
-   8   1                       Lcd_show_string(1,1,"Current Time",12);
-   9   1      
-  10   1      
-  11   1                      dat = DS3231_Read(0x06);
-  12   1                      year = ((dat&0x70)>>4)*10+(dat&0x0f);
-  13   1                      LcdWrite(0x80+0+0x40,year/10+0x30);
-  14   1                      LcdWrite(0x80+1+0x40,year%10+0x30);
-  15   1      
-  16   1                      dat = DS3231_Read(0x05);
-  17   1                      month = ((dat&0x70)>>4)*10+(dat&0x0f);
-  18   1                      LcdWrite(0x80+2+0x40,month/10+0x30);
-  19   1                      LcdWrite(0x80+3+0x40,month%10+0x30);
-  20   1      
-  21   1                       dat = DS3231_Read(0x04);
-  22   1                       date =  ((dat&0x70)>>4)*10+(dat&0x0f);
-  23   1                      LcdWrite(0x80+4+0x40,date/10+0x30);
-  24   1                      LcdWrite(0x80+5+0x40,date%10+0x30);
-  25   1      
-  26   1                      //时间
-  27   1                      dat = DS3231_Read(0x02);
-  28   1                      hour =  ((dat&0x70)>>4)*10+(dat&0x0f);
-  29   1                      LcdWrite(0x80+7+0x40,hour/10+0x30);
-  30   1                      LcdWrite(0x80+8+0x40,hour%10+0x30);
-  31   1                      LcdWrite(0x80+9+0x40,':');
-  32   1      
-  33   1      
-  34   1                      dat = DS3231_Read(0x01);
-  35   1                  minute = ((dat&0x70)>>4)*10+(dat&0x0f);
-  36   1                      LcdWrite(0x80+10+0x40,minute/10+0x30);
-  37   1                      LcdWrite(0x80+11+0x40,minute%10+0x30);
-  38   1                      LcdWrite(0x80+12+0x40,':');
-  39   1      
-  40   1                      dat = DS3231_Read(0x00);
-  41   1                      second = ((dat&0x70)>>4)*10+(dat&0x0f);
-  42   1                      LcdWrite(0x80+13+0x40,second/10+0x30);
-  43   1                      LcdWrite(0x80+14+0x40,second%10+0x30);
-  44   1      }
-*** WARNING C280 IN LINE 7 OF BSP\UI.C: 'week': unreferenced local variable
-  45          
-  46          
-  47          void show_dht(unsigned char RH,unsigned char RL,unsigned char TH,unsigned char TL)
-  48          {
-  49   1                      LcdWrite(0x80+0x40,RH/10+0x30);
-  50   1                      LcdWrite(0x80+0x40+1,RH%10+0x30);
-  51   1                      LcdWrite(0x80+0x40+2,'.');
-  52   1                      LcdWrite(0x80+0x40+3,RL/10+0x30);
-  53   1                      LcdWrite(0x80+0x40+4,RL%10+0x30);
-C51 COMPILER V9.01   UI                                                                    04/06/2025 16:31:13 PAGE 2   
+   2          int speed_ban=60;
+   3          int heart_ban = 80;
+   4          int rh_ban = 60;
+   5          int th_ban = 30;
+   6          void show_time(void)
+   7          {
+   8   1                  unsigned char dat;
+   9   1                  unsigned char second, minute, hour;
+  10   1                      unsigned char year, month, date,week;
+  11   1                       Lcd_show_string(1,1,"Current Time",12);
+  12   1      
+  13   1      
+  14   1                      dat = DS3231_Read(0x06);
+  15   1                      year = ((dat&0x70)>>4)*10+(dat&0x0f);
+  16   1                      LcdWrite(0x80+0+0x40,year/10+0x30);
+  17   1                      LcdWrite(0x80+1+0x40,year%10+0x30);
+  18   1      
+  19   1                      dat = DS3231_Read(0x05);
+  20   1                      month = ((dat&0x70)>>4)*10+(dat&0x0f);
+  21   1                      LcdWrite(0x80+2+0x40,month/10+0x30);
+  22   1                      LcdWrite(0x80+3+0x40,month%10+0x30);
+  23   1      
+  24   1                       dat = DS3231_Read(0x04);
+  25   1                       date =  ((dat&0x70)>>4)*10+(dat&0x0f);
+  26   1                      LcdWrite(0x80+4+0x40,date/10+0x30);
+  27   1                      LcdWrite(0x80+5+0x40,date%10+0x30);
+  28   1      
+  29   1                      //时间
+  30   1                      dat = DS3231_Read(0x02);
+  31   1                      hour =  ((dat&0x70)>>4)*10+(dat&0x0f);
+  32   1                      LcdWrite(0x80+7+0x40,hour/10+0x30);
+  33   1                      LcdWrite(0x80+8+0x40,hour%10+0x30);
+  34   1                      LcdWrite(0x80+9+0x40,':');
+  35   1      
+  36   1      
+  37   1                      dat = DS3231_Read(0x01);
+  38   1                  minute = ((dat&0x70)>>4)*10+(dat&0x0f);
+  39   1                      LcdWrite(0x80+10+0x40,minute/10+0x30);
+  40   1                      LcdWrite(0x80+11+0x40,minute%10+0x30);
+  41   1                      LcdWrite(0x80+12+0x40,':');
+  42   1      
+  43   1                      dat = DS3231_Read(0x00);
+  44   1                      second = ((dat&0x70)>>4)*10+(dat&0x0f);
+  45   1                      LcdWrite(0x80+13+0x40,second/10+0x30);
+  46   1                      LcdWrite(0x80+14+0x40,second%10+0x30);
+  47   1      }
+*** WARNING C280 IN LINE 10 OF BSP\UI.C: 'week': unreferenced local variable
+  48          
+  49          
+  50          void show_dht(unsigned char RH,unsigned char RL,unsigned char TH,unsigned char TL)
+  51          {
+  52   1                      LcdWrite(0x80+0x40,RH/10+0x30);
+  53   1                      LcdWrite(0x80+0x40+1,RH%10+0x30);
+C51 COMPILER V9.01   UI                                                                    04/08/2025 00:00:51 PAGE 2   
 
-  54   1                      LcdWrite(0x80+0x40+5,'%');
-  55   1                      LcdWrite(0x80+0x40+6,'R');
-  56   1                      LcdWrite(0x80+0x40+7,'H');
-  57   1      
-  58   1                      LcdWrite(0x80+0x40+9,TH/10+0x30);
-  59   1                      LcdWrite(0x80+0x40+10,TH%10+0x30);
-  60   1                      LcdWrite(0x80+0x40+11,'.');
-  61   1                      LcdWrite(0x80+0x40+12,TL/10+0x30);
-  62   1                      LcdWrite(0x80+0x40+13,TL%10+0x30);
-  63   1                      LcdWrite(0x80+0x40+14,'C');
-  64   1      }
-  65          
-  66          
-  67          void handle_setting(void)
-  68          {
-  69   1              unsigned char dat_y,dat_month,dat_date,dat_hour,dat_minute,dat_second;
-  70   1                  unsigned char second, minute, hour;
-  71   1                      unsigned char year, month, date,week;
-  72   1                      char data_chow[2]={0};
-  73   1                      int position=0;
-  74   1      
-  75   1                 Lcd_show_string(1,1,"Setting time",12);
-  76   1                      dat_y = DS3231_Read(0x06);
-  77   1                      year = ((dat_y&0x70)>>4)*10+(dat_y&0x0f);
-  78   1                      LcdWrite(0x80+0x40+0,year/10+0x30);
-  79   1                      LcdWrite(0x80+0x40+1,year%10+0x30);
-  80   1      
-  81   1                      dat_month = DS3231_Read(0x05);
-  82   1                      month = ((dat_month&0x70)>>4)*10+(dat_month&0x0f);
-  83   1                      LcdWrite(0x80+0x40+2,month/10+0x30);
-  84   1                      LcdWrite(0x80+0x40+3,month%10+0x30);
-  85   1      
-  86   1                       dat_date = DS3231_Read(0x04);
-  87   1                       date =  ((dat_date&0x70)>>4)*10+(dat_date&0x0f);
-  88   1                      LcdWrite(0x80+0x40+4,date/10+0x30);
-  89   1                      LcdWrite(0x80+0x40+5,date%10+0x30);
-  90   1      
-  91   1                      //时间
-  92   1      
-  93   1                      dat_hour = DS3231_Read(0x02);
-  94   1                      hour = ((dat_hour&0x70)>>4)*10+(dat_hour&0x0f);
-  95   1                      LcdWrite(0x80+0x40+7,hour/10+0x30);
-  96   1                      LcdWrite(0x80+0x40+8,hour%10+0x30);
-  97   1                      LcdWrite(0x80+0x40+9,':');
-  98   1      
-  99   1      
- 100   1                      dat_minute = DS3231_Read(0x01);
- 101   1                  minute = ((dat_minute&0x70)>>4)*10+(dat_minute&0x0f);
- 102   1                      LcdWrite(0x80+0x40+10,minute/10+0x30);
- 103   1                      LcdWrite(0x80+0x40+11,minute%10+0x30);
- 104   1                      LcdWrite(0x80+0x40+12,':');
- 105   1      
- 106   1                      dat_second = DS3231_Read(0x00);
- 107   1                      second = ((dat_second&0x70)>>4)*10+(dat_second&0x0f);
- 108   1                      LcdWrite(0x80+0x40+13,second/10+0x30);
- 109   1                      LcdWrite(0x80+0x40+14,second%10+0x30);
- 110   1              while(1)
- 111   1              {
- 112   2                       if(BUTTON_L ==0)                         //KEY1移动
- 113   2                       {
- 114   3                          delay_ms(100);
- 115   3                          if(BUTTON_L ==0)
-C51 COMPILER V9.01   UI                                                                    04/06/2025 16:31:13 PAGE 3   
+  54   1                      LcdWrite(0x80+0x40+2,'.');
+  55   1                      LcdWrite(0x80+0x40+3,RL/10+0x30);
+  56   1                      LcdWrite(0x80+0x40+4,RL%10+0x30);
+  57   1                      LcdWrite(0x80+0x40+5,'%');
+  58   1                      LcdWrite(0x80+0x40+6,'R');
+  59   1                      LcdWrite(0x80+0x40+7,'H');
+  60   1      
+  61   1                      LcdWrite(0x80+0x40+9,TH/10+0x30);
+  62   1                      LcdWrite(0x80+0x40+10,TH%10+0x30);
+  63   1                      LcdWrite(0x80+0x40+11,'.');
+  64   1                      LcdWrite(0x80+0x40+12,TL/10+0x30);
+  65   1                      LcdWrite(0x80+0x40+13,TL%10+0x30);
+  66   1                      LcdWrite(0x80+0x40+14,'C');
+  67   1      }
+  68          
+  69          
+  70          void handle_setting(void)
+  71          {
+  72   1              unsigned char dat_y,dat_month,dat_date,dat_hour,dat_minute,dat_second;
+  73   1                  unsigned char second, minute, hour;
+  74   1                      unsigned char year, month, date,week;
+  75   1                      char data_chow[2]={0};
+  76   1                      int position=0;
+  77   1      
+  78   1                 Lcd_show_string(1,1,"Setting time",12);
+  79   1                      dat_y = DS3231_Read(0x06);
+  80   1                      year = ((dat_y&0x70)>>4)*10+(dat_y&0x0f);
+  81   1                      LcdWrite(0x80+0x40+0,year/10+0x30);
+  82   1                      LcdWrite(0x80+0x40+1,year%10+0x30);
+  83   1      
+  84   1                      dat_month = DS3231_Read(0x05);
+  85   1                      month = ((dat_month&0x70)>>4)*10+(dat_month&0x0f);
+  86   1                      LcdWrite(0x80+0x40+2,month/10+0x30);
+  87   1                      LcdWrite(0x80+0x40+3,month%10+0x30);
+  88   1      
+  89   1                       dat_date = DS3231_Read(0x04);
+  90   1                       date =  ((dat_date&0x70)>>4)*10+(dat_date&0x0f);
+  91   1                      LcdWrite(0x80+0x40+4,date/10+0x30);
+  92   1                      LcdWrite(0x80+0x40+5,date%10+0x30);
+  93   1      
+  94   1                      //时间
+  95   1      
+  96   1                      dat_hour = DS3231_Read(0x02);
+  97   1                      hour = ((dat_hour&0x70)>>4)*10+(dat_hour&0x0f);
+  98   1                      LcdWrite(0x80+0x40+7,hour/10+0x30);
+  99   1                      LcdWrite(0x80+0x40+8,hour%10+0x30);
+ 100   1                      LcdWrite(0x80+0x40+9,':');
+ 101   1      
+ 102   1      
+ 103   1                      dat_minute = DS3231_Read(0x01);
+ 104   1                  minute = ((dat_minute&0x70)>>4)*10+(dat_minute&0x0f);
+ 105   1                      LcdWrite(0x80+0x40+10,minute/10+0x30);
+ 106   1                      LcdWrite(0x80+0x40+11,minute%10+0x30);
+ 107   1                      LcdWrite(0x80+0x40+12,':');
+ 108   1      
+ 109   1                      dat_second = DS3231_Read(0x00);
+ 110   1                      second = ((dat_second&0x70)>>4)*10+(dat_second&0x0f);
+ 111   1                      LcdWrite(0x80+0x40+13,second/10+0x30);
+ 112   1                      LcdWrite(0x80+0x40+14,second%10+0x30);
+ 113   1              while(1)
+ 114   1              {
+ 115   2                       if(BUTTON_L ==0)                         //KEY1移动
+C51 COMPILER V9.01   UI                                                                    04/08/2025 00:00:51 PAGE 3   
 
- 116   3                              {
- 117   4                                      position++;
- 118   4                                      if(position>5)
- 119   4                                      {
- 120   5                                              //把数据写到DS3221中
- 121   5                                              DS3231_Write(0x06,dat_y);
- 122   5                                              DS3231_Write(0x05,dat_month);
- 123   5                                              DS3231_Write(0x04,dat_date);
- 124   5                                              DS3231_Write(0x02,dat_hour);
- 125   5                                              DS3231_Write(0x01,dat_minute);
- 126   5                                              DS3231_Write(0x00,dat_second);
- 127   5                                               LCDClear();
- 128   5                                               return;
- 129   5                                      }
- 130   4                              }
- 131   3      
- 132   3                       }
- 133   2      
- 134   2                       if(BUTTON_M==0)
- 135   2                       {
- 136   3                              delay_ms(100);
- 137   3                          if(BUTTON_M==0)
- 138   3                              {
- 139   4                                      switch(position)
- 140   4                                              {
- 141   5                                                      case 0:    //对年的设置
- 142   5                                                              dat_y=dat_y-1;
- 143   5                                                              if(dat_y<0)
- 144   5                                                              {
- 145   6                                                                      dat_y=99;       
- 146   6                                                              }
- 147   5                                                      year = ((dat_y&0x70)>>4)*10+(dat_y&0x0f);
- 148   5                                                              LcdWrite(0x80+0x40+0,year/10+0x30);
- 149   5                                                              LcdWrite(0x80+0x40+1,year%10+0x30);     
- 150   5                                                      break;
- 151   5                                                      case 1:   //对月的设置
- 152   5                                                              dat_month=dat_month-1;
- 153   5                                                              if(dat_month<1)
- 154   5                                                              {
- 155   6                                                                      dat_month=12;   
- 156   6                                                              }
- 157   5                                                      month = ((dat_month&0x70)>>4)*10+(dat_month&0x0f);
- 158   5                                                              LcdWrite(0x80+0x40+2,month/10+0x30);
- 159   5                                                              LcdWrite(0x80+0x40+3,month%10+0x30);    
- 160   5                                                      break;
- 161   5                                                      case 2:   //对日的设置
- 162   5                                                              dat_date=dat_date-1;
- 163   5                                                              if(dat_date<1)
- 164   5                                                              {
- 165   6                                                                      dat_date=31;    
- 166   6                                                              }
- 167   5                                                      date = ((dat_date&0x70)>>4)*10+(dat_date&0x0f);
- 168   5                                                              LcdWrite(0x80+0x40+4,date/10+0x30);
- 169   5                                                              LcdWrite(0x80+0x40+5,date%10+0x30);     
- 170   5                                                      break;
- 171   5      
- 172   5                                                      case 3:   //对时的设置
- 173   5                                                              dat_hour=dat_hour-1;
- 174   5                                                              if(dat_hour<0)
- 175   5                                                              {
- 176   6                                                                      dat_hour=23;    
- 177   6                                                              }
-C51 COMPILER V9.01   UI                                                                    04/06/2025 16:31:13 PAGE 4   
+ 116   2                       {
+ 117   3                          delay_ms(100);
+ 118   3                          if(BUTTON_L ==0)
+ 119   3                              {
+ 120   4                                      position++;
+ 121   4                                      if(position>5)
+ 122   4                                      {
+ 123   5                                              //把数据写到DS3221中
+ 124   5                                              DS3231_Write(0x06,dat_y);
+ 125   5                                              DS3231_Write(0x05,dat_month);
+ 126   5                                              DS3231_Write(0x04,dat_date);
+ 127   5                                              DS3231_Write(0x02,dat_hour);
+ 128   5                                              DS3231_Write(0x01,dat_minute);
+ 129   5                                              DS3231_Write(0x00,dat_second);
+ 130   5                                               LCDClear();
+ 131   5                                               break;
+ 132   5                                      }
+ 133   4                              }
+ 134   3      
+ 135   3                       }
+ 136   2      
+ 137   2                       if(BUTTON_M==0)
+ 138   2                       {
+ 139   3                              delay_ms(100);
+ 140   3                          if(BUTTON_M==0)
+ 141   3                              {
+ 142   4                                      switch(position)
+ 143   4                                              {
+ 144   5                                                      case 0:    //对年的设置
+ 145   5                                                              dat_y=dat_y-1;
+ 146   5                                                              if(dat_y<0)
+ 147   5                                                              {
+ 148   6                                                                      dat_y=99;       
+ 149   6                                                              }
+ 150   5                                                      year = ((dat_y&0x70)>>4)*10+(dat_y&0x0f);
+ 151   5                                                              LcdWrite(0x80+0x40+0,year/10+0x30);
+ 152   5                                                              LcdWrite(0x80+0x40+1,year%10+0x30);     
+ 153   5                                                      break;
+ 154   5                                                      case 1:   //对月的设置
+ 155   5                                                              dat_month=dat_month-1;
+ 156   5                                                              if(dat_month<1)
+ 157   5                                                              {
+ 158   6                                                                      dat_month=12;   
+ 159   6                                                              }
+ 160   5                                                      month = ((dat_month&0x70)>>4)*10+(dat_month&0x0f);
+ 161   5                                                              LcdWrite(0x80+0x40+2,month/10+0x30);
+ 162   5                                                              LcdWrite(0x80+0x40+3,month%10+0x30);    
+ 163   5                                                      break;
+ 164   5                                                      case 2:   //对日的设置
+ 165   5                                                              dat_date=dat_date-1;
+ 166   5                                                              if(dat_date<1)
+ 167   5                                                              {
+ 168   6                                                                      dat_date=31;    
+ 169   6                                                              }
+ 170   5                                                      date = ((dat_date&0x70)>>4)*10+(dat_date&0x0f);
+ 171   5                                                              LcdWrite(0x80+0x40+4,date/10+0x30);
+ 172   5                                                              LcdWrite(0x80+0x40+5,date%10+0x30);     
+ 173   5                                                      break;
+ 174   5      
+ 175   5                                                      case 3:   //对时的设置
+ 176   5                                                              dat_hour=dat_hour-1;
+ 177   5                                                              if(dat_hour<0)
+C51 COMPILER V9.01   UI                                                                    04/08/2025 00:00:51 PAGE 4   
 
- 178   5                                                      hour = ((dat_hour&0x70)>>4)*10+(dat_hour&0x0f);
- 179   5                                                              LcdWrite(0x80+0x40+7,hour/10+0x30);
- 180   5                                                              LcdWrite(0x80+0x40+8,hour%10+0x30);     
- 181   5                                                      break;
- 182   5                                                      case 4:   //对时的设置
- 183   5                                                              dat_minute=dat_minute-1;
- 184   5                                                              if(dat_minute<0)
- 185   5                                                              {
- 186   6                                                                      dat_minute=59;  
- 187   6                                                              }
- 188   5                                                      minute = ((dat_minute&0x70)>>4)*10+(dat_minute&0x0f);
- 189   5                                                              LcdWrite(0x80+0x40+10,minute/10+0x30);
- 190   5                                                              LcdWrite(0x80+0x40+11,minute%10+0x30);  
- 191   5                                                      break;
- 192   5                                                      case 5:   //对秒的设置
- 193   5                                                              dat_second=dat_second-1;
- 194   5                                                              if(dat_second<0)
- 195   5                                                              {
- 196   6                                                                      dat_second=59;  
- 197   6                                                              }
- 198   5                                                      second = ((dat_second&0x70)>>4)*10+(dat_second&0x0f);
- 199   5                                                              LcdWrite(0x80+0x40+13,second/10+0x30);
- 200   5                                                              LcdWrite(0x80+0x40+14,second%10+0x30);  
- 201   5                                                      break;
- 202   5                                              }
- 203   4      
- 204   4                              }
- 205   3                       }
- 206   2      
- 207   2                       if(BUTTON_R==0)
- 208   2                       {
- 209   3                              delay_ms(100);
- 210   3                          if(BUTTON_R==0)
- 211   3                              {
- 212   4                                  switch(position)
- 213   4                                      {
- 214   5                                               case 0:        //对年的设置
- 215   5                                                      dat_y=dat_y+1;
- 216   5                                                      if(dat_y>99)
- 217   5                                                      {
- 218   6                                                              dat_y=0;        
- 219   6                                                      }
- 220   5                                              year = ((dat_y&0x70)>>4)*10+(dat_y&0x0f);
- 221   5                                                      LcdWrite(0x80+0x40+0,year/10+0x30);
- 222   5                                                      LcdWrite(0x80+0x40+1,year%10+0x30);     
- 223   5                                               break;
- 224   5                                               case 1:          //对月的设置
- 225   5                                                              dat_month=dat_month+1;
- 226   5                                                              if(dat_month>12)
- 227   5                                                              {
- 228   6                                                                      dat_month=1;    
- 229   6                                                              }
- 230   5                                                      month = ((dat_month&0x70)>>4)*10+(dat_month&0x0f);
- 231   5                                                              LcdWrite(0x80+0x40+2,month/10+0x30);
- 232   5                                                              LcdWrite(0x80+0x40+3,month%10+0x30);    
- 233   5                                                      break;
- 234   5                                                      case 2:   //对日的设置
- 235   5                                                              dat_date=dat_date+1;
- 236   5                                                              if(dat_date>31)
- 237   5                                                              {
- 238   6                                                                      dat_date=1;     
- 239   6                                                              }
-C51 COMPILER V9.01   UI                                                                    04/06/2025 16:31:13 PAGE 5   
+ 178   5                                                              {
+ 179   6                                                                      dat_hour=23;    
+ 180   6                                                              }
+ 181   5                                                      hour = ((dat_hour&0x70)>>4)*10+(dat_hour&0x0f);
+ 182   5                                                              LcdWrite(0x80+0x40+7,hour/10+0x30);
+ 183   5                                                              LcdWrite(0x80+0x40+8,hour%10+0x30);     
+ 184   5                                                      break;
+ 185   5                                                      case 4:   //对时的设置
+ 186   5                                                              dat_minute=dat_minute-1;
+ 187   5                                                              if(dat_minute<0)
+ 188   5                                                              {
+ 189   6                                                                      dat_minute=59;  
+ 190   6                                                              }
+ 191   5                                                      minute = ((dat_minute&0x70)>>4)*10+(dat_minute&0x0f);
+ 192   5                                                              LcdWrite(0x80+0x40+10,minute/10+0x30);
+ 193   5                                                              LcdWrite(0x80+0x40+11,minute%10+0x30);  
+ 194   5                                                      break;
+ 195   5                                                      case 5:   //对秒的设置
+ 196   5                                                              dat_second=dat_second-1;
+ 197   5                                                              if(dat_second<0)
+ 198   5                                                              {
+ 199   6                                                                      dat_second=59;  
+ 200   6                                                              }
+ 201   5                                                      second = ((dat_second&0x70)>>4)*10+(dat_second&0x0f);
+ 202   5                                                              LcdWrite(0x80+0x40+13,second/10+0x30);
+ 203   5                                                              LcdWrite(0x80+0x40+14,second%10+0x30);  
+ 204   5                                                      break;
+ 205   5                                              }
+ 206   4      
+ 207   4                              }
+ 208   3                       }
+ 209   2      
+ 210   2                       if(BUTTON_R==0)
+ 211   2                       {
+ 212   3                              delay_ms(100);
+ 213   3                          if(BUTTON_R==0)
+ 214   3                              {
+ 215   4                                  switch(position)
+ 216   4                                      {
+ 217   5                                               case 0:        //对年的设置
+ 218   5                                                      dat_y=dat_y+1;
+ 219   5                                                      if(dat_y>99)
+ 220   5                                                      {
+ 221   6                                                              dat_y=0;        
+ 222   6                                                      }
+ 223   5                                              year = ((dat_y&0x70)>>4)*10+(dat_y&0x0f);
+ 224   5                                                      LcdWrite(0x80+0x40+0,year/10+0x30);
+ 225   5                                                      LcdWrite(0x80+0x40+1,year%10+0x30);     
+ 226   5                                               break;
+ 227   5                                               case 1:          //对月的设置
+ 228   5                                                              dat_month=dat_month+1;
+ 229   5                                                              if(dat_month>12)
+ 230   5                                                              {
+ 231   6                                                                      dat_month=1;    
+ 232   6                                                              }
+ 233   5                                                      month = ((dat_month&0x70)>>4)*10+(dat_month&0x0f);
+ 234   5                                                              LcdWrite(0x80+0x40+2,month/10+0x30);
+ 235   5                                                              LcdWrite(0x80+0x40+3,month%10+0x30);    
+ 236   5                                                      break;
+ 237   5                                                      case 2:   //对日的设置
+ 238   5                                                              dat_date=dat_date+1;
+ 239   5                                                              if(dat_date>31)
+C51 COMPILER V9.01   UI                                                                    04/08/2025 00:00:51 PAGE 5   
 
- 240   5                                                      date = ((dat_date&0x70)>>4)*10+(dat_date&0x0f);
- 241   5                                                              LcdWrite(0x80+0x40+4,date/10+0x30);
- 242   5                                                              LcdWrite(0x80+0x40+5,date%10+0x30);     
- 243   5                                                      break;
- 244   5                                                      case 3:   //对时的设置
- 245   5                                                              dat_hour=dat_hour+1;
- 246   5                                                              if(dat_hour>23)
- 247   5                                                              {
- 248   6                                                                      dat_hour=0;     
- 249   6                                                              }
- 250   5                                                      date = ((dat_hour&0x70)>>4)*10+(dat_hour&0x0f);
- 251   5                                                              LcdWrite(0x80+0x40+7,date/10+0x30);
- 252   5                                                              LcdWrite(0x80+0x40+8,date%10+0x30);     
- 253   5                                                      break;
- 254   5      
- 255   5                                                      case 4:   //对分的设置
- 256   5                                                              dat_minute=dat_minute+1;
- 257   5                                                              if(dat_minute>59)
- 258   5                                                              {
- 259   6                                                                      dat_minute=0;   
- 260   6                                                              }
- 261   5                                                      minute = ((dat_minute&0x70)>>4)*10+(dat_minute&0x0f);
- 262   5                                                              LcdWrite(0x80+0x40+10,minute/10+0x30);
- 263   5                                                              LcdWrite(0x80+0x40+11,minute%10+0x30);  
- 264   5                                                      break;
- 265   5                                                      case 5:   //对秒的设置
- 266   5                                                              dat_second=dat_second+1;
- 267   5                                                              if(dat_second>59)
- 268   5                                                              {
- 269   6                                                                      dat_second=0;   
- 270   6                                                              }
- 271   5                                                      second = ((dat_second&0x70)>>4)*10+(dat_second&0x0f);
- 272   5                                                              LcdWrite(0x80+0x40+13,second/10+0x30);
- 273   5                                                              LcdWrite(0x80+0x40+14,second%10+0x30);  
- 274   5                                                      break;
- 275   5                                      }
- 276   4      
- 277   4                              }
- 278   3                       }
- 279   2              }
- 280   1      }
-*** WARNING C280 IN LINE 71 OF BSP\UI.C: 'week': unreferenced local variable
- 281          
- 282          void ui_setting(void)
- 283          {
- 284   1          int position=0;
- 285   1              Lcd_show_string(1,1,"Setting Menu",12);
- 286   1              Lcd_show_string(2,0,"L:Opt R:Sure",12);
- 287   1              delay_ms(1000);
- 288   1              while(1)
- 289   1              {
- 290   2                      if(BUTTON_R==0)
- 291   2                      {
- 292   3                              LCDClear();
- 293   3                              return;
- 294   3                      }
- 295   2                      
- 296   2                      if(BUTTON_L==0)
- 297   2                      {
- 298   3                              LCDClear();
- 299   3                              handle_setting();
- 300   3                              return;
-C51 COMPILER V9.01   UI                                                                    04/06/2025 16:31:13 PAGE 6   
+ 240   5                                                              {
+ 241   6                                                                      dat_date=1;     
+ 242   6                                                              }
+ 243   5                                                      date = ((dat_date&0x70)>>4)*10+(dat_date&0x0f);
+ 244   5                                                              LcdWrite(0x80+0x40+4,date/10+0x30);
+ 245   5                                                              LcdWrite(0x80+0x40+5,date%10+0x30);     
+ 246   5                                                      break;
+ 247   5                                                      case 3:   //对时的设置
+ 248   5                                                              dat_hour=dat_hour+1;
+ 249   5                                                              if(dat_hour>23)
+ 250   5                                                              {
+ 251   6                                                                      dat_hour=0;     
+ 252   6                                                              }
+ 253   5                                                      date = ((dat_hour&0x70)>>4)*10+(dat_hour&0x0f);
+ 254   5                                                              LcdWrite(0x80+0x40+7,date/10+0x30);
+ 255   5                                                              LcdWrite(0x80+0x40+8,date%10+0x30);     
+ 256   5                                                      break;
+ 257   5      
+ 258   5                                                      case 4:   //对分的设置
+ 259   5                                                              dat_minute=dat_minute+1;
+ 260   5                                                              if(dat_minute>59)
+ 261   5                                                              {
+ 262   6                                                                      dat_minute=0;   
+ 263   6                                                              }
+ 264   5                                                      minute = ((dat_minute&0x70)>>4)*10+(dat_minute&0x0f);
+ 265   5                                                              LcdWrite(0x80+0x40+10,minute/10+0x30);
+ 266   5                                                              LcdWrite(0x80+0x40+11,minute%10+0x30);  
+ 267   5                                                      break;
+ 268   5                                                      case 5:   //对秒的设置
+ 269   5                                                              dat_second=dat_second+1;
+ 270   5                                                              if(dat_second>59)
+ 271   5                                                              {
+ 272   6                                                                      dat_second=0;   
+ 273   6                                                              }
+ 274   5                                                      second = ((dat_second&0x70)>>4)*10+(dat_second&0x0f);
+ 275   5                                                              LcdWrite(0x80+0x40+13,second/10+0x30);
+ 276   5                                                              LcdWrite(0x80+0x40+14,second%10+0x30);  
+ 277   5                                                      break;
+ 278   5                                      }
+ 279   4      
+ 280   4                              }
+ 281   3                       }
+ 282   2              }
+ 283   1      
+ 284   1              ui_set_speed();
+ 285   1      }
+*** WARNING C280 IN LINE 74 OF BSP\UI.C: 'week': unreferenced local variable
+ 286          
+ 287          void ui_setting(void)
+ 288          {
+ 289   1          int position=0;
+ 290   1              Lcd_show_string(1,1,"Setting Menu",12);
+ 291   1              Lcd_show_string(2,0,"L:Opt R:Sure",12);
+ 292   1              delay_ms(1000);
+ 293   1              while(1)
+ 294   1              {
+ 295   2                      if(BUTTON_R==0)
+ 296   2                      {
+ 297   3                              LCDClear();
+ 298   3                              return;
+ 299   3                      }
+ 300   2                      
+C51 COMPILER V9.01   UI                                                                    04/08/2025 00:00:51 PAGE 6   
 
- 301   3                      }  
- 302   2              }       
- 303   1      }
+ 301   2                      if(BUTTON_L==0)
+ 302   2                      {
+ 303   3                              LCDClear();
+ 304   3                              handle_setting();
+ 305   3                              return;
+ 306   3                      }  
+ 307   2              }       
+ 308   1      }
+ 309          
+ 310          void ui_set_speed(void)
+ 311          {
+ 312   1          LCDClear();
+ 313   1              Lcd_show_string(1,2,"Set Speed",9);
+ 314   1              while(1)
+ 315   1              {
+ 316   2                              LcdWrite(0x80+0x40+5,speed_ban/10+0x30);
+ 317   2                              LcdWrite(0x80+0x40+6,speed_ban%10+0x30);
+ 318   2      
+ 319   2                               if(BUTTON_M==0)
+ 320   2                               {
+ 321   3                                       delay_ms(100);
+ 322   3                                       if(BUTTON_M==0)
+ 323   3                                       {
+ 324   4                                              speed_ban--;
+ 325   4                                              if(speed_ban<0)
+ 326   4                                              {
+ 327   5                                                      speed_ban=99;
+ 328   5                                              }       
+ 329   4                                       }
+ 330   3                               }
+ 331   2      
+ 332   2                               if(BUTTON_R==0)
+ 333   2                               {
+ 334   3                                       delay_ms(100);
+ 335   3                                       if(BUTTON_R==0)
+ 336   3                                       {
+ 337   4                                              speed_ban++;
+ 338   4                                              if(speed_ban>99)
+ 339   4                                              {
+ 340   5                                                      speed_ban=0;
+ 341   5                                              }       
+ 342   4                                       }
+ 343   3                               }
+ 344   2      
+ 345   2                               if(BUTTON_L==0)
+ 346   2                               {
+ 347   3                                       delay_ms(100);
+ 348   3                                       if(BUTTON_L==0)
+ 349   3                                       {
+ 350   4                                                      LCDClear();
+ 351   4                                                      break;  
+ 352   4                                       }
+ 353   3                               }
+ 354   2              }
+ 355   1      
+ 356   1              ui_set_heart();
+ 357   1      
+ 358   1      }
+ 359          
+ 360          void ui_set_heart(void)
+ 361          {
+ 362   1          LCDClear();
+C51 COMPILER V9.01   UI                                                                    04/08/2025 00:00:51 PAGE 7   
+
+ 363   1              BUTTON_L=1;
+ 364   1              Lcd_show_string(1,0,"Set Heart Rate",14);
+ 365   1              while(1)
+ 366   1              {
+ 367   2                              LcdWrite(0x80+0x40+5,heart_ban/100+0x30);
+ 368   2                              LcdWrite(0x80+0x40+6,(heart_ban/10)%10+0x30);
+ 369   2                              LcdWrite(0x80+0x40+7,heart_ban%10+0x30);
+ 370   2      
+ 371   2                               if(BUTTON_M==0)
+ 372   2                               {
+ 373   3                                       delay_ms(100);
+ 374   3                                       if(BUTTON_M==0)
+ 375   3                                       {
+ 376   4                                              heart_ban--;
+ 377   4                                              if(heart_ban<0)
+ 378   4                                              {
+ 379   5                                                      heart_ban=180;
+ 380   5                                              }       
+ 381   4                                       }
+ 382   3                               }
+ 383   2      
+ 384   2                               if(BUTTON_R==0)
+ 385   2                               {
+ 386   3                                       delay_ms(100);
+ 387   3                                       if(BUTTON_R==0)
+ 388   3                                       {
+ 389   4                                              heart_ban++;
+ 390   4                                              if(heart_ban>180)
+ 391   4                                              {
+ 392   5                                                      heart_ban=0;
+ 393   5                                              }       
+ 394   4                                       }
+ 395   3                               }
+ 396   2      
+ 397   2                               if(BUTTON_L==0)
+ 398   2                               {
+ 399   3                                       delay_ms(100);
+ 400   3                                       if(BUTTON_L==0)
+ 401   3                                       {
+ 402   4                                                      LCDClear();
+ 403   4                                                      break;  
+ 404   4                                       }
+ 405   3                               }
+ 406   2              }
+ 407   1      
+ 408   1              ui_setting_rh();
+ 409   1      
+ 410   1      }
+ 411          
+ 412          void ui_setting_rh(void)
+ 413          {
+ 414   1              int position=0;
+ 415   1          LCDClear();
+ 416   1              BUTTON_L=1;
+ 417   1              Lcd_show_string(1,3,"Set RH%TH",9);
+ 418   1              while(1)
+ 419   1              {
+ 420   2                              Lcd_show_string(2,3,"RH:",3);
+ 421   2                              LcdWrite(0x80+0x40+6,rh_ban/10+0x30);
+ 422   2                              LcdWrite(0x80+0x40+7,rh_ban%10+0x30);
+ 423   2      
+ 424   2                              Lcd_show_string(2,8,"TH:",3);
+C51 COMPILER V9.01   UI                                                                    04/08/2025 00:00:51 PAGE 8   
+
+ 425   2                              LcdWrite(0x80+0x40+11,th_ban/10+0x30);
+ 426   2                              LcdWrite(0x80+0x40+12,th_ban%10+0x30);
+ 427   2      
+ 428   2                               if(BUTTON_M==0)
+ 429   2                               {
+ 430   3                                       delay_ms(100);
+ 431   3                                       if(BUTTON_M==0)
+ 432   3                                       {
+ 433   4                                         if(position==0)
+ 434   4                                         {
+ 435   5                                                      rh_ban--;
+ 436   5                                                      if(rh_ban<0)
+ 437   5                                                      {
+ 438   6                                                              rh_ban=99;
+ 439   6                                                      }                                       
+ 440   5                                         }
+ 441   4      
+ 442   4                                         if(position==1)
+ 443   4                                         {
+ 444   5                                                      th_ban--;
+ 445   5                                                      if(th_ban<0)
+ 446   5                                                      {
+ 447   6                                                              th_ban=99;
+ 448   6                                                      }               
+ 449   5                                         }
+ 450   4              
+ 451   4                                       }
+ 452   3                               }
+ 453   2      
+ 454   2                               if(BUTTON_R==0)
+ 455   2                               {
+ 456   3                                       delay_ms(100);
+ 457   3                                       if(BUTTON_R==0)
+ 458   3                                       {
+ 459   4                                              if(position==0)
+ 460   4                                              {
+ 461   5                                                      rh_ban++;
+ 462   5                                                      if(rh_ban>99)
+ 463   5                                                      {
+ 464   6                                                              rh_ban=0;
+ 465   6                                                      }                                               
+ 466   5                                              }
+ 467   4      
+ 468   4                                              if(position==1)
+ 469   4                                              {
+ 470   5                                                      th_ban++;
+ 471   5                                                      if(th_ban>99)
+ 472   5                                                      {
+ 473   6                                                              th_ban=0;
+ 474   6                                                      }                                                       
+ 475   5                                              }
+ 476   4              
+ 477   4                                       }
+ 478   3                               }
+ 479   2      
+ 480   2                               if(BUTTON_L==0)
+ 481   2                               {
+ 482   3                                       delay_ms(100);
+ 483   3                                       if(BUTTON_L==0)
+ 484   3                                       {
+ 485   4                                                      position++;
+ 486   4                                                      if(position>1)
+C51 COMPILER V9.01   UI                                                                    04/08/2025 00:00:51 PAGE 9   
+
+ 487   4                                                      {
+ 488   5                                                              LCDClear();
+ 489   5                                                              break;
+ 490   5                                                      }
+ 491   4              
+ 492   4                                       }
+ 493   3                               }
+ 494   2              }       
+ 495   1      }
+ 496          
+ 497          
+ 498          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1820    ----
-   CONSTANT SIZE    =     54    ----
+   CODE SIZE        =   2527    ----
+   CONSTANT SIZE    =     97    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----      30
+   DATA SIZE        =      8      32
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

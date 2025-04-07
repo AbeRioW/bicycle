@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   LCD                                                                   04/06/2025 12:12:30 PAGE 1   
+C51 COMPILER V9.01   LCD                                                                   04/07/2025 22:32:51 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE LCD
@@ -62,7 +62,7 @@ line level    source
   52          {
   53   1          LcdWriteCmd(addr);
   54   1          LcdWriteDat(dat);
-C51 COMPILER V9.01   LCD                                                                   04/06/2025 12:12:30 PAGE 2   
+C51 COMPILER V9.01   LCD                                                                   04/07/2025 22:32:51 PAGE 2   
 
   55   1      }
   56          

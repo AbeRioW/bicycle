@@ -4,25 +4,27 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Admin\Desktop\123\bicycle\template.uvproj
-Project File Date:  04/06/2025
+Project File Date:  04/07/2025
 
 <h2>Output:</h2>
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(67): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
 compiling lcd.c...
 compiling ds3231.c...
 compiling uart.c...
+bsp\uart.c(141): warning C329: single-line comment contains line-continuation
 compiling adc0832.c...
 compiling config.c...
 compiling ui.c...
 BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(70): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
 compiling DHT11.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -31,7 +33,44 @@ linking...
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
-Program Size: data=102.1 xdata=0 code=6263
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=127.1 xdata=0 code=6270
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 14 Warning(s).
+Build target 'Target 1'
+compiling DHT11.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=127.1 xdata=0 code=6270
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=109.1 xdata=0 code=6306
 creating hex file from ".\output\template"...
 ".\output\template" - 0 Error(s), 11 Warning(s).
 Build target 'Target 1'
@@ -42,17 +81,27 @@ linking...
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
-Program Size: data=102.1 xdata=0 code=6263
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=109.1 xdata=0 code=6306
 creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 3 Warning(s).
+".\output\template" - 0 Error(s), 4 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(67): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
+compiling ds3231.c...
+compiling uart.c...
+bsp\uart.c(141): warning C329: single-line comment contains line-continuation
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+compiling DHT11.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
@@ -60,1758 +109,608 @@ linking...
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
-Program Size: data=102.1 xdata=0 code=6270
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=109.1 xdata=0 code=6306
 creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 9 Warning(s).
+".\output\template" - 0 Error(s), 14 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=109.1 xdata=0 code=6315
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
+compiling ds3231.c...
+compiling uart.c...
+bsp\uart.c(141): warning C329: single-line comment contains line-continuation
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+compiling DHT11.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SET_SPEED?UI
+Program Size: data=109.1 xdata=0 code=6350
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 15 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=109.1 xdata=0 code=6358
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=109.1 xdata=0 code=6361
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
 APP\MAIN.C(68): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
 linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?CO?MAIN
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
+    SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=110.1 xdata=0 code=6323
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 13 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+BSP\UI.C(315): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+BSP\UI.C(315): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+BSP\UI.C(315): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=112.1 xdata=0 code=6506
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=112.1 xdata=0 code=6579
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(8): warning C280: 'week': unreferenced local variable
+BSP\UI.C(72): warning C280: 'week': unreferenced local variable
+BSP\UI.C(343): error C202: 'BUTTON_': undefined identifier
+BSP\UI.C(343): error C141: syntax error near 'L'
+BSP\UI.C(343): error C202: 'L': undefined identifier
+BSP\UI.C(343): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(8): warning C280: 'week': unreferenced local variable
+BSP\UI.C(72): warning C280: 'week': unreferenced local variable
+BSP\UI.C(343): error C202: 'BUTTON_': undefined identifier
+BSP\UI.C(343): error C141: syntax error near 'L'
+BSP\UI.C(343): error C202: 'L': undefined identifier
+BSP\UI.C(343): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+BSP\UI.C(342): error C202: 'BUTTON_': undefined identifier
+BSP\UI.C(342): error C141: syntax error near 'L'
+BSP\UI.C(342): error C202: 'L': undefined identifier
+BSP\UI.C(342): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(7): warning C280: 'week': unreferenced local variable
+BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=112.1 xdata=0 code=6594
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(8): warning C280: 'week': unreferenced local variable
+BSP\UI.C(72): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?PRINTF?PRINTF
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?_LCD_SHOW_STRING?LCD
-    LENGTH:  000CH
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?ADC_GETDATE?ADC0832
-    LENGTH:  0003H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?UI_SETTING?UI
-    LENGTH:  0002H
-*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    SEGMENT: ?DT?_LCD_SHOW_STRING?LCD
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 06F4H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 06F6H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1411H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1413H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1425H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1428H
-Program Size: data=145.1 xdata=0 code=5990
-Target not created
+    SEGMENT: ?PR?UI_SET_HEART?UI
+Program Size: data=114.1 xdata=0 code=6793
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 7 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(68): warning C209: '_ADC0832': too few actual parameters
+compiling ds3231.c...
+compiling uart.c...
+bsp\uart.c(141): warning C329: single-line comment contains line-continuation
+compiling ui.c...
+BSP\UI.C(8): warning C280: 'week': unreferenced local variable
+BSP\UI.C(72): warning C280: 'week': unreferenced local variable
+compiling DHT11.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=114.1 xdata=0 code=6795
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 14 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(8): warning C280: 'week': unreferenced local variable
+BSP\UI.C(72): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=114.1 xdata=0 code=6795
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(8): warning C280: 'week': unreferenced local variable
+BSP\UI.C(72): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=114.1 xdata=0 code=6797
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
 APP\MAIN.C(70): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
+compiling ds3231.c...
+compiling uart.c...
+bsp\uart.c(141): warning C329: single-line comment contains line-continuation
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+compiling DHT11.c...
 linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?CO?MAIN
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=118.1 xdata=0 code=7006
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 14 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=118.1 xdata=0 code=7178
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=118.1 xdata=0 code=7178
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=118.1 xdata=0 code=7178
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(69): warning C209: '_ADC0832': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING_RH?UI
+Program Size: data=120.1 xdata=0 code=7175
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(60): warning C280: 'show': unreferenced local variable
+APP\MAIN.C(61): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(62): warning C280: 'xinlv_v': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_ADC0832?ADC0832
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
+    SEGMENT: ?PR?UI_SETTING?UI
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
+    SEGMENT: ?PR?UI_SETTING_RH?UI
+Program Size: data=115.0 xdata=0 code=4370
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 15 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(69): warning C209: '_ADC0832': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
+    SEGMENT: ?PR?UI_SETTING_RH?UI
+Program Size: data=120.1 xdata=0 code=7175
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?PRINTF?PRINTF
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=120.1 xdata=0 code=7177
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+BSP\UI.C(369): error C214: illegal pointer conversion
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+BSP\UI.C(369): error C214: illegal pointer conversion
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+BSP\UI.C(369): error C214: illegal pointer conversion
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+BSP\UI.C(368): error C214: illegal pointer conversion
+Target not created
+Build target 'Target 1'
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
 *** ERROR L107: ADDRESS SPACE OVERFLOW
     SPACE:   DATA    
-    SEGMENT: ?DT?_LCD_SHOW_STRING?LCD
-    LENGTH:  000CH
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?ADC_GETDATE?ADC0832
-    LENGTH:  0003H
+    SEGMENT: ?DT?UI
+    LENGTH:  0008H
 *** ERROR L107: ADDRESS SPACE OVERFLOW
     SPACE:   DATA    
     SEGMENT: ?DT?UI_SETTING?UI
     LENGTH:  0002H
 *** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    SEGMENT: ?DT?_LCD_SHOW_STRING?LCD
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 06F4H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 06F6H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1411H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1413H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1425H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1428H
-Program Size: data=145.1 xdata=0 code=5990
+    SYMBOL:  TH_BAN
+    SEGMENT: ?DT?UI
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  RH_BAN
+    SEGMENT: ?DT?UI
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  HEART_BAN
+    SEGMENT: ?DT?UI
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  SPEED_BAN
+    SEGMENT: ?DT?UI
+Program Size: data=137.1 xdata=0 code=7166
 Target not created
 Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
+BSP\UI.C(362): warning C280: 'test_data': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3381
+Program Size: data=123.1 xdata=0 code=7111
 creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 16 Warning(s).
+".\output\template" - 0 Error(s), 7 Warning(s).
 Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
+compiling ui.c...
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3324
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 16 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3324
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 16 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3324
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 16 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3320
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 15 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=116.0 xdata=0 code=3323
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 14 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=116.0 xdata=0 code=3320
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 15 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=115.0 xdata=0 code=3332
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 14 Warning(s).
-Build target 'Target 1'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=115.0 xdata=0 code=3332
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 9 Warning(s).
-Build target 'Target 1'
-compiling DHT11.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=115.0 xdata=0 code=3332
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 9 Warning(s).
-Build target 'Target 1'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=115.0 xdata=0 code=3332
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 9 Warning(s).
-Build target 'Target 1'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=115.0 xdata=0 code=3332
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 9 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=115.0 xdata=0 code=3335
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 13 Warning(s).
-Build target 'Target 1'
-compiling DHT11.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
 *** ERROR L107: ADDRESS SPACE OVERFLOW
     SPACE:   DATA    
-    SEGMENT: ?DT?ADC_GETDATE?ADC0832
-    LENGTH:  0003H
+    SEGMENT: ?DT?UI
+    LENGTH:  0008H
 *** ERROR L107: ADDRESS SPACE OVERFLOW
     SPACE:   DATA    
     SEGMENT: ?DT?UI_SETTING?UI
     LENGTH:  0002H
-Program Size: data=132.1 xdata=0 code=4323
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  TH_BAN
+    SEGMENT: ?DT?UI
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  RH_BAN
+    SEGMENT: ?DT?UI
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  HEART_BAN
+    SEGMENT: ?DT?UI
+*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
+    SYMBOL:  SPEED_BAN
+    SEGMENT: ?DT?UI
+Program Size: data=138.1 xdata=0 code=7140
 Target not created
 Build target 'Target 1'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?ADC_GETDATE?ADC0832
-    LENGTH:  0003H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?UI_SETTING?UI
-    LENGTH:  0002H
-Program Size: data=132.1 xdata=0 code=4323
-Target not created
-Build target 'Target 1'
-compiling DHT11.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=115.0 xdata=0 code=3335
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 8 Warning(s).
-Build target 'Target 1'
-compiling DHT11.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?ADC_GETDATE?ADC0832
-    LENGTH:  0003H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?UI_SETTING?UI
-    LENGTH:  0002H
-Program Size: data=132.1 xdata=0 code=4319
-Target not created
-Build target 'Target 1'
-compiling DHT11.c...
-BSP\DHT11.C(2): error C141: syntax error near '@'
-BSP\DHT11.C(6): error C129: missing ';' before '<string>'
-Target not created
-Build target 'Target 1'
-compiling DHT11.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?ADC_GETDATE?ADC0832
-    LENGTH:  0003H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?UI_SETTING?UI
-    LENGTH:  0002H
-Program Size: data=132.1 xdata=0 code=4319
-Target not created
-Build target 'Target 1'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?ADC_GETDATE?ADC0832
-    LENGTH:  0003H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?UI_SETTING?UI
-    LENGTH:  0002H
-Program Size: data=132.1 xdata=0 code=4319
-Target not created
-Build target 'Target 1'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?ADC_GETDATE?ADC0832
-    LENGTH:  0003H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?UI_SETTING?UI
-    LENGTH:  0002H
-Program Size: data=132.1 xdata=0 code=4319
-Target not created
-Build target 'Target 1'
-compiling DHT11.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=115.0 xdata=0 code=3335
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 8 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(66): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-Program Size: data=102.1 xdata=0 code=6263
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 9 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-Program Size: data=104.0 xdata=0 code=4201
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 12 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-Program Size: data=104.0 xdata=0 code=4204
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3377
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 15 Warning(s).
-Build target 'Target 1'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3377
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 8 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3323
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 14 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3383
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 13 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3380
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 14 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(21): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(22): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(16): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(16): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3388
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 15 Warning(s).
-Build target 'Target 1'
 compiling ui.c...
-BSP\UI.C(8): warning C209: '_Lcd_show_string': too few actual parameters
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(70): warning C280: 'week': unreferenced local variable
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3415
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling ui.c...
-BSP\UI.C(8): warning C209: '_Lcd_show_string': too few actual parameters
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(70): warning C280: 'week': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3417
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling ui.c...
-BSP\UI.C(8): warning C209: '_Lcd_show_string': too few actual parameters
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(70): warning C280: 'week': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3418
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(70): warning C280: 'week': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3424
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 10 Warning(s).
-Build target 'Target 1'
-compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(70): warning C280: 'week': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3424
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 10 Warning(s).
-Build target 'Target 1'
-compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(70): warning C280: 'week': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3424
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 10 Warning(s).
-Build target 'Target 1'
-compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(71): warning C280: 'week': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=116.0 xdata=0 code=3424
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 10 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(22): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(23): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(17): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=118.0 xdata=0 code=3434
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 15 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(22): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(23): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(17): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(17): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(18): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'show': unreferenced local variable
-compiling ds3231.c...
-compiling uart.c...
-compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(75): warning C280: 'week': unreferenced local variable
-compiling DHT11.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SET_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=111.0 xdata=0 code=3452
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 18 Warning(s).
-Build target 'Target 1'
-compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(75): warning C280: 'week': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SET_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=111.0 xdata=0 code=3452
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(75): warning C280: 'week': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SET_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=111.0 xdata=0 code=3452
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SET_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=106.0 xdata=0 code=3476
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 14 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SET_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=106.0 xdata=0 code=3476
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 14 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SET_TIME?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=106.0 xdata=0 code=3479
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 14 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'show': unreferenced local variable
-compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(71): warning C280: 'week': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=106.0 xdata=0 code=3488
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 15 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'show': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=106.0 xdata=0 code=3490
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 13 Warning(s).
-Build target 'Target 1'
-compiling DHT11.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=106.0 xdata=0 code=3490
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 6 Warning(s).
-Build target 'Target 1'
-compiling DHT11.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=106.0 xdata=0 code=3490
+Program Size: data=120.1 xdata=0 code=7184
 creating hex file from ".\output\template"...
 ".\output\template" - 0 Error(s), 6 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'show': unreferenced local variable
-APP\MAIN.C(71): error C202: 'adc_data': undefined identifier
-APP\MAIN.C(72): error C202: 'show': undefined identifier
-APP\MAIN.C(73): error C202: 'show': undefined identifier
-APP\MAIN.C(74): error C202: 'adc_data': undefined identifier
-APP\MAIN.C(75): error C202: 'adc_data': undefined identifier
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'show': unreferenced local variable
-APP\MAIN.C(72): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=103.0 xdata=0 code=3546
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 13 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(73): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=96.1 xdata=0 code=4563
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(73): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=96.1 xdata=0 code=4561
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(75): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=96.1 xdata=0 code=4563
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(75): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=96.1 xdata=0 code=4570
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(76): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=108.1 xdata=0 code=6123
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(76): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=108.1 xdata=0 code=6124
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(76): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=108.1 xdata=0 code=6142
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(70): error C141: syntax error near 'char'
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(24): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(25): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(19): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(19): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(76): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=128.1 xdata=0 code=6184
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
 APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
 APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
 APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
 APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
 APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
 APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(77): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?INT0?MAIN
-    CALLER2: ?C_C51STARTUP
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  006DH
-Program Size: data=157.2 xdata=0 code=6267
+APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
+APP\MAIN.C(112): error C202: 'rh_ban': undefined identifier
 Target not created
 Build target 'Target 1'
 compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
 APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
 APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
 APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
 APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
 APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
 APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?INT0?MAIN
-    CALLER2: ?C_C51STARTUP
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  006DH
-Program Size: data=157.2 xdata=0 code=6267
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=128.1 xdata=0 code=6198
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
-compiling uart.c...
-BSP\UART.C(141): warning C275: expression with possibly no effect
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=128.1 xdata=0 code=6198
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 12 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(77): warning C209: '_ADC0832': too few actual parameters
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
 compiling ds3231.c...
 compiling uart.c...
-BSP\UART.C(141): warning C275: expression with possibly no effect
+bsp\uart.c(141): warning C329: single-line comment contains line-continuation
 compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(71): warning C280: 'week': unreferenced local variable
+BSP\UI.C(10): warning C280: 'week': unreferenced local variable
+BSP\UI.C(74): warning C280: 'week': unreferenced local variable
 compiling DHT11.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -1822,18 +721,19 @@ linking...
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=128.1 xdata=0 code=6198
+Program Size: data=120.1 xdata=0 code=7456
 creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 14 Warning(s).
+".\output\template" - 0 Error(s), 15 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
@@ -1843,19 +743,19 @@ linking...
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=128.1 xdata=0 code=6200
+Program Size: data=120.1 xdata=0 code=7458
 creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
+".\output\template" - 0 Error(s), 12 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(77): warning C209: '_ADC0832': too few actual parameters
-compiling uart.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
@@ -1865,116 +765,171 @@ linking...
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=128.1 xdata=0 code=6200
+Program Size: data=120.1 xdata=0 code=7458
 creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
+".\output\template" - 0 Error(s), 12 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(77): warning C209: '_ADC0832': too few actual parameters
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
 linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_4DATA?MAIN
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
+    SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=120.1 xdata=0 code=7458
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(81): warning C209: '_ADC0832': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SHOW_TIME?UI
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=120.1 xdata=0 code=7460
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(80): warning C209: '_ADC0832': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=120.1 xdata=0 code=7456
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(81): warning C209: '_ADC0832': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=120.1 xdata=0 code=7590
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(81): warning C209: '_ADC0832': too few actual parameters
+APP\MAIN.C(69): warning C280: 'show1': unreferenced local variable
+APP\MAIN.C(69): warning C280: 'show2': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+*** ERROR L107: ADDRESS SPACE OVERFLOW
+    SPACE:   DATA    
+    SEGMENT: _DATA_GROUP_
+    LENGTH:  0067H
+Program Size: data=160.1 xdata=0 code=7590
+Target not created
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(81): warning C209: '_ADC0832': too few actual parameters
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
 *** ERROR L107: ADDRESS SPACE OVERFLOW
     SPACE:   DATA    
     SEGMENT: ?DT?DHT11
     LENGTH:  000DH
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?_LCD_SHOW_STRING?LCD
-    LENGTH:  000CH
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  0008H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?SHOW_TIME?UI
-    LENGTH:  0007H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?ADC_GETDATE?ADC0832
-    LENGTH:  0003H
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?DELAY_10US?DHT11
-    LENGTH:  0001H
 *** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
     SYMBOL:  U8T_DATA_H
     MODULE:  .\output\main.obj (MAIN)
-    ADDRESS: 110AH
+    ADDRESS: 10B7H
 *** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
     SYMBOL:  U8T_DATA_H
     MODULE:  .\output\main.obj (MAIN)
-    ADDRESS: 110DH
+    ADDRESS: 10BAH
 *** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
     SYMBOL:  U8RH_DATA_L
     MODULE:  .\output\main.obj (MAIN)
-    ADDRESS: 110FH
+    ADDRESS: 10BCH
 *** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
     SYMBOL:  U8RH_DATA_H
     MODULE:  .\output\main.obj (MAIN)
-    ADDRESS: 1111H
+    ADDRESS: 10BEH
 *** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
+    SYMBOL:  U8RH_DATA_H
     MODULE:  .\output\main.obj (MAIN)
-    ADDRESS: 11B8H
+    ADDRESS: 119AH
 *** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
+    SYMBOL:  U8T_DATA_H
     MODULE:  .\output\main.obj (MAIN)
-    ADDRESS: 11BBH
-*** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    SEGMENT: ?DT?_LCD_SHOW_STRING?LCD
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 0FBCH
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 0FBFH
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 0687H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 0689H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1436H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 1438H
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 144AH
-*** ERROR L118: REFERENCE MADE TO ERRONEOUS EXTERNAL
-    SYMBOL:  ?_LCD_SHOW_STRING?BYTE
-    MODULE:  .\output\ui.obj (UI)
-    ADDRESS: 144DH
+    ADDRESS: 11EDH
 *** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
     SYMBOL:  U8COMDATA
     SEGMENT: ?DT?DHT11
@@ -2014,279 +969,23 @@ linking...
 *** ERROR L105: PUBLIC REFERS TO IGNORED SEGMENT
     SYMBOL:  U8T_DATA_H
     SEGMENT: ?DT?DHT11
-Program Size: data=172.1 xdata=0 code=6084
+Program Size: data=140.1 xdata=0 code=7376
 Target not created
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(77): warning C209: '_ADC0832': too few actual parameters
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(81): warning C209: '_ADC0832': too few actual parameters
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=128.1 xdata=0 code=6143
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling uart.c...
-bsp\uart.c(140): warning C329: single-line comment contains line-continuation
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=128.1 xdata=0 code=6143
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 7 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(94): warning C206: 'speinrf': missing function-prototype
-APP\MAIN.C(94): error C267: 'speinrf': requires ANSI-style prototype
-compiling ds3231.c...
-compiling uart.c...
-bsp\uart.c(141): warning C329: single-line comment contains line-continuation
-compiling ui.c...
-BSP\UI.C(7): warning C280: 'week': unreferenced local variable
-BSP\UI.C(71): warning C280: 'week': unreferenced local variable
-compiling DHT11.c...
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(94): warning C206: 'sprinrf': missing function-prototype
-APP\MAIN.C(94): error C267: 'sprinrf': requires ANSI-style prototype
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  0065H
-Program Size: data=150.1 xdata=0 code=6245
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  0065H
-Program Size: data=150.1 xdata=0 code=6245
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  0065H
-Program Size: data=150.1 xdata=0 code=6188
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(72): warning C280: 'show_speed': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  0065H
-Program Size: data=150.1 xdata=0 code=6168
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(72): warning C280: 'show_speed': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  0065H
-Program Size: data=150.1 xdata=0 code=6164
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(72): warning C280: 'show_speed': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  0065H
-Program Size: data=150.1 xdata=0 code=6154
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(72): warning C280: 'show_speed': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: _DATA_GROUP_
-    LENGTH:  0065H
-Program Size: data=150.1 xdata=0 code=6150
-Target not created
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(79): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -2295,152 +994,147 @@ linking...
     SPACE:   DATA    
     SEGMENT: ?DT?UI_SETTING?UI
     LENGTH:  0002H
-Program Size: data=130.1 xdata=0 code=6150
+Program Size: data=130.1 xdata=0 code=7376
 Target not created
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(81): warning C209: '_ADC0832': too few actual parameters
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_UARTSENDSTRING?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_ADC0832?ADC0832
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SHOW_DHT?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RH?DHT11
-Program Size: data=93.0 xdata=0 code=3447
+Program Size: data=120.1 xdata=0 code=7376
 creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 14 Warning(s).
+".\output\template" - 0 Error(s), 12 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(81): warning C209: '_ADC0832': too few actual parameters
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-*** ERROR L107: ADDRESS SPACE OVERFLOW
-    SPACE:   DATA    
-    SEGMENT: ?DT?UI_SETTING?UI
-    LENGTH:  0002H
-Program Size: data=130.1 xdata=0 code=6150
+Program Size: data=125.1 xdata=0 code=7376
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 12 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(81): warning C209: '_ADC0832': too few actual parameters
+APP\MAIN.C(103): error C141: syntax error near ')'
 Target not created
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
-APP\MAIN.C(83): error C202: 'show_bpm': undefined identifier
-APP\MAIN.C(84): error C202: 'show_bpm': undefined identifier
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(103): error C141: syntax error near ')'
 Target not created
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6150
+Program Size: data=125.1 xdata=0 code=7562
 creating hex file from ".\output\template"...
 ".\output\template" - 0 Error(s), 11 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6245
+Program Size: data=125.1 xdata=0 code=7562
 creating hex file from ".\output\template"...
 ".\output\template" - 0 Error(s), 11 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2C_ACK?DS3231
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UART_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?TIMER0_INIT?UART
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6244
+Program Size: data=125.1 xdata=0 code=7562
 creating hex file from ".\output\template"...
 ".\output\template" - 0 Error(s), 11 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
@@ -2450,154 +1144,7 @@ linking...
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6165
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6253
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(91): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6250
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(77): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6260
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(77): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6260
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(91): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6250
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6260
-creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 11 Warning(s).
-Build target 'Target 1'
-compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?LCD_TEST?LCD
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?I2C_ACK?DS3231
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_US?CONFIG
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6260
+Program Size: data=125.1 xdata=0 code=7544
 creating hex file from ".\output\template"...
 ".\output\template" - 0 Error(s), 11 Warning(s).
 Build target 'Target 1'
@@ -2611,19 +1158,18 @@ linking...
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6277
+Program Size: data=125.1 xdata=0 code=7529
 creating hex file from ".\output\template"...
 ".\output\template" - 0 Error(s), 4 Warning(s).
 Build target 'Target 1'
 compiling main.c...
-APP\MAIN.C(25): warning C206: 'ADC_init': missing function-prototype
-APP\MAIN.C(26): warning C206: 'timer0_init': missing function-prototype
-APP\MAIN.C(20): warning C280: 'second': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'minute': unreferenced local variable
-APP\MAIN.C(20): warning C280: 'hour': unreferenced local variable
-APP\MAIN.C(21): warning C280: 'adc_data': unreferenced local variable
-APP\MAIN.C(78): warning C209: '_ADC0832': too few actual parameters
-compiling DHT11.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
@@ -2633,11 +1179,18 @@ linking...
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6279
+Program Size: data=125.1 xdata=0 code=7538
 creating hex file from ".\output\template"...
 ".\output\template" - 0 Error(s), 11 Warning(s).
 Build target 'Target 1'
-compiling DHT11.c...
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
@@ -2647,11 +1200,18 @@ linking...
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6288
+Program Size: data=125.1 xdata=0 code=7545
 creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 4 Warning(s).
+".\output\template" - 0 Error(s), 11 Warning(s).
 Build target 'Target 1'
-compiling DHT11.c...
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LCD_TEST?LCD
@@ -2661,6 +1221,164 @@ linking...
     SEGMENT: ?PR?_DELAY_US?CONFIG
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?UI_SETTING?UI
-Program Size: data=110.1 xdata=0 code=6288
+Program Size: data=125.1 xdata=0 code=7538
 creating hex file from ".\output\template"...
-".\output\template" - 0 Error(s), 4 Warning(s).
+".\output\template" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=125.1 xdata=0 code=7526
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=125.1 xdata=0 code=7517
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=125.1 xdata=0 code=7525
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=125.1 xdata=0 code=7517
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=125.1 xdata=0 code=7531
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+APP\MAIN.C(101): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=125.1 xdata=0 code=7538
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 11 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+app\main.c(3): warning C315: unknown #directive 'Include'
+APP\MAIN.C(26): warning C206: 'ADC_init': missing function-prototype
+APP\MAIN.C(27): warning C206: 'timer0_init': missing function-prototype
+APP\MAIN.C(21): warning C280: 'second': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'minute': unreferenced local variable
+APP\MAIN.C(21): warning C280: 'hour': unreferenced local variable
+APP\MAIN.C(22): warning C280: 'adc_data': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_TEST?LCD
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2C_ACK?DS3231
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?CONFIG
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?UI_SETTING?UI
+Program Size: data=125.1 xdata=0 code=7577
+creating hex file from ".\output\template"...
+".\output\template" - 0 Error(s), 11 Warning(s).

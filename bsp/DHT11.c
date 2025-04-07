@@ -3,7 +3,7 @@
 
 #include <reg52.h>
 
-sbit P2_0 = P2^4;  // DHT11数据引脚连接到P24
+sbit P2_0 = P3^7;  // DHT11数据引脚连接到P24
 
 unsigned char  U8FLAG,U8temp,U8comdata;
 unsigned char  U8T_data_H,U8T_data_L,U8RH_data_H,U8RH_data_L,U8checkdata;
@@ -95,7 +95,7 @@ void RH(void)
 	 //数据校验 
 	 
 	   U8temp=(U8T_data_H_temp+U8T_data_L_temp+U8RH_data_H_temp+U8RH_data_L_temp);
-	   	  UartSendString("123");
+//	   	  UartSendString("123");
 	   if(U8temp==U8checkdata_temp)
 	   {
 		   	   	  UartSendString("125");

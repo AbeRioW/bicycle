@@ -1,5 +1,8 @@
 #include "ui.h"
-
+int speed_ban=60;
+int heart_ban = 80;
+int rh_ban = 60;
+int th_ban = 30;
 void show_time(void)
 {
    	    unsigned char dat;
@@ -125,7 +128,7 @@ void handle_setting(void)
 					DS3231_Write(0x01,dat_minute);
 					DS3231_Write(0x00,dat_second);
 					 LCDClear();
-					 return;
+					 break;
 				}
 			}
 
@@ -277,6 +280,8 @@ void handle_setting(void)
 			}
 		 }
 	}
+
+	ui_set_speed();
 }
 
 void ui_setting(void)
@@ -301,3 +306,193 @@ void ui_setting(void)
 		}  
 	}	
 }
+
+void ui_set_speed(void)
+{
+    LCDClear();
+	Lcd_show_string(1,2,"Set Speed",9);
+	while(1)
+	{
+		   	LcdWrite(0x80+0x40+5,speed_ban/10+0x30);
+			LcdWrite(0x80+0x40+6,speed_ban%10+0x30);
+
+			 if(BUTTON_M==0)
+			 {
+			 	 delay_ms(100);
+				 if(BUTTON_M==0)
+				 {
+				 	speed_ban--;
+					if(speed_ban<0)
+					{
+						speed_ban=99;
+					}	
+				 }
+			 }
+
+			 if(BUTTON_R==0)
+			 {
+			 	 delay_ms(100);
+				 if(BUTTON_R==0)
+				 {
+				 	speed_ban++;
+					if(speed_ban>99)
+					{
+						speed_ban=0;
+					}	
+				 }
+			 }
+
+			 if(BUTTON_L==0)
+			 {
+			 	 delay_ms(100);
+				 if(BUTTON_L==0)
+				 {
+						LCDClear();
+						break;	
+				 }
+			 }
+	}
+
+	ui_set_heart();
+
+}
+
+void ui_set_heart(void)
+{
+    LCDClear();
+	BUTTON_L=1;
+	Lcd_show_string(1,0,"Set Heart Rate",14);
+	while(1)
+	{
+		   	LcdWrite(0x80+0x40+5,heart_ban/100+0x30);
+			LcdWrite(0x80+0x40+6,(heart_ban/10)%10+0x30);
+			LcdWrite(0x80+0x40+7,heart_ban%10+0x30);
+
+			 if(BUTTON_M==0)
+			 {
+			 	 delay_ms(100);
+				 if(BUTTON_M==0)
+				 {
+				 	heart_ban--;
+					if(heart_ban<0)
+					{
+						heart_ban=180;
+					}	
+				 }
+			 }
+
+			 if(BUTTON_R==0)
+			 {
+			 	 delay_ms(100);
+				 if(BUTTON_R==0)
+				 {
+				 	heart_ban++;
+					if(heart_ban>180)
+					{
+						heart_ban=0;
+					}	
+				 }
+			 }
+
+			 if(BUTTON_L==0)
+			 {
+			 	 delay_ms(100);
+				 if(BUTTON_L==0)
+				 {
+						LCDClear();
+						break;	
+				 }
+			 }
+	}
+
+	ui_setting_rh();
+
+}
+
+void ui_setting_rh(void)
+{
+	int position=0;
+    LCDClear();
+	BUTTON_L=1;
+	Lcd_show_string(1,3,"Set RH%TH",9);
+	while(1)
+	{
+			Lcd_show_string(2,3,"RH:",3);
+			LcdWrite(0x80+0x40+6,rh_ban/10+0x30);
+			LcdWrite(0x80+0x40+7,rh_ban%10+0x30);
+
+			Lcd_show_string(2,8,"TH:",3);
+			LcdWrite(0x80+0x40+11,th_ban/10+0x30);
+			LcdWrite(0x80+0x40+12,th_ban%10+0x30);
+
+			 if(BUTTON_M==0)
+			 {
+			 	 delay_ms(100);
+				 if(BUTTON_M==0)
+				 {
+				   if(position==0)
+				   {
+				 		rh_ban--;
+						if(rh_ban<0)
+						{
+							rh_ban=99;
+						}				   	
+				   }
+
+				   if(position==1)
+				   {
+				   		th_ban--;
+						if(th_ban<0)
+						{
+							th_ban=99;
+						}		
+				   }
+	
+				 }
+			 }
+
+			 if(BUTTON_R==0)
+			 {
+			 	 delay_ms(100);
+				 if(BUTTON_R==0)
+				 {
+				 	if(position==0)
+					{
+				 		rh_ban++;
+						if(rh_ban>99)
+						{
+							rh_ban=0;
+						}						
+					}
+
+					if(position==1)
+					{
+				 		th_ban++;
+						if(th_ban>99)
+						{
+							th_ban=0;
+						}							
+					}
+	
+				 }
+			 }
+
+			 if(BUTTON_L==0)
+			 {
+			 	 delay_ms(100);
+				 if(BUTTON_L==0)
+				 {
+						position++;
+						if(position>1)
+						{
+							LCDClear();
+							break;
+						}
+	
+				 }
+			 }
+	}	
+}
+
+
+

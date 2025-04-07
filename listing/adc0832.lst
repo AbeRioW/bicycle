@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   ADC0832                                                               04/06/2025 12:12:31 PAGE 1   
+C51 COMPILER V9.01   ADC0832                                                               04/07/2025 22:32:51 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE ADC0832
@@ -62,7 +62,7 @@ line level    source
   52   1          delay1();
   53   1          ADC_CLK=0;//下降沿4
   54   1          delay1();
-C51 COMPILER V9.01   ADC0832                                                               04/06/2025 12:12:31 PAGE 2   
+C51 COMPILER V9.01   ADC0832                                                               04/07/2025 22:32:51 PAGE 2   
 
   55   1      
   56   1          for(i=0;i<7;i++)     //正序接收
@@ -126,7 +126,7 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =    192    ----
    CONSTANT SIZE    =      2    ----
    XDATA SIZE       =   ----    ----
-C51 COMPILER V9.01   ADC0832                                                               04/06/2025 12:12:31 PAGE 3   
+C51 COMPILER V9.01   ADC0832                                                               04/07/2025 22:32:51 PAGE 3   
 
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----       3

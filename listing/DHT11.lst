@@ -1,4 +1,4 @@
-C51 COMPILER V9.01   DHT11                                                                 04/06/2025 17:00:51 PAGE 1   
+C51 COMPILER V9.01   DHT11                                                                 04/08/2025 00:38:31 PAGE 1   
 
 
 C51 COMPILER V9.01, COMPILATION OF MODULE DHT11
@@ -13,7 +13,7 @@ line level    source
    3          
    4          #include <reg52.h>
    5          
-   6          sbit P2_0 = P2^4;  // DHT11数据引脚连接到P24
+   6          sbit P2_0 = P3^7;  // DHT11数据引脚连接到P24
    7          
    8          unsigned char  U8FLAG,U8temp,U8comdata;
    9          unsigned char  U8T_data_H,U8T_data_L,U8RH_data_H,U8RH_data_L,U8checkdata;
@@ -62,7 +62,7 @@ line level    source
   52   2                         
   53   2                      // 如果高电平高过预定0高电平值则数据位为 1 
   54   2                       
-C51 COMPILER V9.01   DHT11                                                                 04/06/2025 17:00:51 PAGE 2   
+C51 COMPILER V9.01   DHT11                                                                 04/08/2025 00:38:31 PAGE 2   
 
   55   2                         U8comdata<<=1;
   56   2                         U8comdata|=U8temp;        //0
@@ -107,7 +107,7 @@ line level    source
   95   2               //数据校验 
   96   2               
   97   2                 U8temp=(U8T_data_H_temp+U8T_data_L_temp+U8RH_data_H_temp+U8RH_data_L_temp);
-  98   2                        UartSendString("123");
+  98   2      //                UartSendString("123");
   99   2                 if(U8temp==U8checkdata_temp)
  100   2                 {
  101   3                                        UartSendString("125");
@@ -123,10 +123,10 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    238    ----
-   CONSTANT SIZE    =      8    ----
+   CODE SIZE        =    227    ----
+   CONSTANT SIZE    =      4    ----
    XDATA SIZE       =   ----    ----
-C51 COMPILER V9.01   DHT11                                                                 04/06/2025 17:00:51 PAGE 3   
+C51 COMPILER V9.01   DHT11                                                                 04/08/2025 00:38:31 PAGE 3   
 
    PDATA SIZE       =   ----    ----
    DATA SIZE        =     13       1
